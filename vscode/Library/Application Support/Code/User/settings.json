@@ -1,0 +1,32 @@
+{
+    "breadcrumbs.enabled": true,
+
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono'",
+    "editor.fontSize": 13,
+    "editor.fontLigatures": true,
+    "editor.minimap.enabled": false,
+    "editor.insertSpaces": true,
+    "editor.rulers": [ 80, 100 ],
+
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+
+    "workbench.colorTheme": "Night Owl",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
+    "[python]": {
+        "editor.rulers": [ 88 ] // black max line length
+    },
+
+    "[rust]": {
+        "editor.rulers": [ 80 ],
+        "editor.formatOnSave": true
+    },
+    "rust-client.rustupPath": "/Users/francisco/.cargo/bin/rustup",
+    "rust.rustfmt_path": "/Users/francisco/.cargo/bin/rustfmt",
+
+    "go.useLanguageServer": true,
+    "go.formatTool": "goimports",
+
+    "cSpell.userWords": [],
+}
