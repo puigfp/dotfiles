@@ -1,10 +1,10 @@
 # this was added to prevent git from trying to set the locale to "en_FR" when running
 # (the language of my system is English but the region is France)
-export LANG="en_US.UTF-8"
+LANG="en_US.UTF-8"
 
 # zsh initialization
-export ZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
+ZSH="$HOME/.oh-my-zsh"
+ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 
 ZSH_THEME="puigfp-bira/bira"
 
@@ -31,27 +31,30 @@ source $ZSH/oh-my-zsh.sh
 
 # macOS: add GNU commands and brew-installed binaries to path
 if [[ "$(uname)" == "Darwin" ]]; then
-  export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH";
+  PATH="/usr/local/bin:$PATH";
+  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"; # gnu stuff
+  PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"; # grep
+  PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"; # sed
 fi
 
 # colors
-export CLICOLOR=1
-export TERM=xterm-256color
+CLICOLOR=1
+TERM=xterm-256color
 
 # neovim
-export EDITOR="nvim"
+EDITOR="nvim"
 alias vim=nvim
 
 # Go
-export GOPATH="${HOME?}/go"
-export PATH="${GOPATH}/bin:${PATH}"
+GOPATH="${HOME?}/go"
+PATH="${GOPATH}/bin:${PATH}"
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
 
 # Python
-export PIPENV_VENV_IN_PROJECT="enabled"
-export PATH="$HOME/.poetry/bin:$PATH"
+PIPENV_VENV_IN_PROJECT="enabled"
+PATH="$HOME/.poetry/bin:$PATH"
 eval "$(pyenv init -)"
 
 # Brew
