@@ -31,30 +31,31 @@ source $ZSH/oh-my-zsh.sh
 
 # macOS: add GNU commands and brew-installed binaries to path
 if [[ "$(uname)" == "Darwin" ]]; then
-  PATH="/usr/local/bin:$PATH";
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"; # gnu stuff
-  PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"; # grep
-  PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"; # sed
+  export PATH="/usr/local/bin:$PATH";
+  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"; # gnu stuff
+  export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"; # grep
+  export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"; # sed
 fi
 
 # colors
-CLICOLOR=1
-TERM=xterm-256color
+export CLICOLOR=1
+export TERM=xterm-256color
 
 # neovim
-EDITOR="nvim"
+export EDITOR="nvim"
 alias vim=nvim
 
 # Go
-GOPATH="${HOME?}/go"
+export GOPATH="${HOME?}/go"
 PATH="${GOPATH}/bin:${PATH}"
 
 # Rust
 PATH="$HOME/.cargo/bin:$PATH"
 
 # Python
-PIPENV_VENV_IN_PROJECT="enabled"
-PATH="$HOME/.poetry/bin:$PATH"
+export PIPENV_VENV_IN_PROJECT="enabled"
+export PIP_REQUIRE_VIRTUALENV=true
+export PATH="$HOME/.poetry/bin:$PATH"
 eval "$(pyenv init -)"
 
 # Brew
