@@ -95,6 +95,7 @@
     - `ncdu`
     - `hugo`
     - `pandoc`
+    - `qcachegrind`
     - `caskroom/cask/google-chrome`
     - `caskroom/cask/brave-browser`
     - `caskroom/cask/iterm2`
