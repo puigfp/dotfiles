@@ -26,6 +26,10 @@
     "rust-client.rustupPath": "/Users/francisco/.cargo/bin/rustup",
     "rust.rustfmt_path": "/Users/francisco/.cargo/bin/rustfmt",
 
+    "[javascript]": {
+        "editor.tabSize": 2,
+    },
+
     "go.useLanguageServer": true,
     "go.formatTool": "goimports",
 
