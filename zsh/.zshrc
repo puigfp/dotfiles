@@ -47,10 +47,10 @@ alias vim=nvim
 
 # Go
 export GOPATH="${HOME?}/go"
-PATH="${GOPATH}/bin:${PATH}"
+export PATH="${GOPATH}/bin:${PATH}"
 
 # Rust
-PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Python
 export PIPENV_VENV_IN_PROJECT="enabled"
