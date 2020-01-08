@@ -117,31 +117,3 @@ code --install-extension <extension>
 # or
 for ext in $(cat vscode_extensions); do code --install-extension $ext; done
 ```
-
-## TODOs
-
-Installation instructions (+ config backup / restore instructions) for:
-
-- GUI
-    - Google Chrome
-    - Spotify
-    - VSCode
-    - 1Password
-    - Google Drive
-    - Docker
-    - iTerm2
-    - Calibre
-    - Steam
-
-- CLI
-    - brew
-    - vim
-    - git
-    - zsh
-
-- languages + tooling
-    - go
-    - node
-    - rust
-    - haskell
-    - Heroku
