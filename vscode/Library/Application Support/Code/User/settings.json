@@ -30,6 +30,16 @@
         "editor.tabSize": 2,
     },
 
+    "[typescript]": {
+        "editor.tabSize": 2,
+    },
+
+    "[markdown]": {
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
+        "files.trimTrailingWhitespace": false
+    },
+
     "go.useLanguageServer": true,
     "go.formatTool": "goimports",
 
