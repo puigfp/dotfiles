@@ -65,3 +65,4 @@ brew "bazel"
 
 tap "heroku/brew"
 brew "heroku"
+brew "heroku-node"  # heroku dependency, not properly resolved by brew bundle
