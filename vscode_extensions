@@ -5,13 +5,16 @@ James-Yu.latex-workshop
 alanz.vscode-hie-server
 bungcip.better-toml
 eamodio.gitlens
+esbenp.prettier-vscode
 fallenwood.vimL
 goessner.mdmath
 justusadam.language-haskell
+mechatroner.rainbow-csv
 ms-azuretools.vscode-docker
 ms-python.python
 ms-vscode.Go
 rebornix.ruby
+redhat.vscode-xml
 redhat.vscode-yaml
 rust-lang.rust
 sdras.night-owl

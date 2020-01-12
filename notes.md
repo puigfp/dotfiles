@@ -102,18 +102,3 @@
 ----------
 
 
-### VS Code Extensions
-
-Backup:
-
-```bash
-code --list-extensions | sort | pbcopy
-```
-
-Restore:
-
-```bash
-code --install-extension <extension>
-# or
-for ext in $(cat vscode_extensions); do code --install-extension $ext; done
-```
