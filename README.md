@@ -40,6 +40,12 @@
 
 ### submodules
 
+- clone repository, including submodules
+
+  ```sh
+  git clone --recurse-submodules
+  ```
+
 - pull latest master of all submodules
 
   ```sh
