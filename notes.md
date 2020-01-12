@@ -10,9 +10,9 @@
 - Account Name: `francisco`
 - iCloud Keychain: setup later
 - Privacy Settings
-    - Enable localization
-    - Disable app analytics (Apple / third party developers)
-    - Disable "Ask Siri"
+  - Enable localization
+  - Disable app analytics (Apple / third party developers)
+  - Disable "Ask Siri"
 - iCloud: do not store files from Documents and Desktop in iCloud Drive
 - FileVault: enable full-disk encryption and allow iCloud account to unlock disk
 - Apple Pay: setup later
@@ -28,39 +28,39 @@
 #### Appearance
 
 - Desktop & Screen Saver
-    - Desktop: RGB color -> (20, 0, 30)
-    - Screen Saver:
-        - Start after -> Never
+  - Desktop: RGB color -> (20, 0, 30)
+  - Screen Saver:
+    - Start after -> Never
 - General
-    - Appearance: Dark
-    - Accent color: purple
-    - Hightlight color: graphite
+  - Appearance: Dark
+  - Accent color: purple
+  - Hightlight color: graphite
 - Displays
-    - Scale -> More Space
+  - Scale -> More Space
 - Dock
-    - Minimize windows using -> Scale effect
-    - Minimize windows into application icon -> Enable
-    - Show recent applications in dock -> Disable
+  - Minimize windows using -> Scale effect
+  - Minimize windows into application icon -> Enable
+  - Show recent applications in dock -> Disable
 - Keyboard
-    - Turn keyboard backlight off after 5 seconds of inactivity
-    - Customize Touch Bar -> Brightness Slider, Play/Pause, Volume Slider, Mute
+  - Turn keyboard backlight off after 5 seconds of inactivity
+  - Customize Touch Bar -> Brightness Slider, Play/Pause, Volume Slider, Mute
 - Bluetooth
-    - Show Bluetooth in menu bar -> Enable
+  - Show Bluetooth in menu bar -> Enable
 - Sound
-    - Sound Effects
-        - Play user interface sound effects -> Disable
-        - Show volume in menu bar -> Enable
+  - Sound Effects
+    - Play user interface sound effects -> Disable
+    - Show volume in menu bar -> Enable
 - Language & Region
-    - Region -> France
+  - Region -> France
 - Users & Groups
-    - Update user picture
+  - Update user picture
 - Touchpad
-    - Tap to click -> Enable
+  - Tap to click -> Enable
 - Mission Control
-    - Automatically rearange Spaces based on most recent use -> Disable
+  - Automatically rearange Spaces based on most recent use -> Disable
 - Via CLI
-    - Hide desktop icons `defaults write com.apple.finder CreateDesktop false` (requires a `killall Finder` to be effective)
-    - Fix font rendering ([blog post](https://ahmadawais.com/fix-macos-mojave-font-rendering-issue/)): `defaults write -g CGFontRenderingFontSmoothingDisabled -bool FALSE` (requires a logout to be effective)
+  - Hide desktop icons `defaults write com.apple.finder CreateDesktop false` (requires a `killall Finder` to be effective)
+  - Fix font rendering ([blog post](https://ahmadawais.com/fix-macos-mojave-font-rendering-issue/)): `defaults write -g CGFontRenderingFontSmoothingDisabled -bool FALSE` (requires a logout to be effective)
 
 ### SSH
 
@@ -72,12 +72,12 @@
 - [Shell Completion Docs](https://docs.brew.sh/Shell-Completion)
 - Standard (`brew install`): see README
 - Not available on Brew:
-    - Google Drive Backup & Sync
-    - Docker for Mac
-    - IntelliJ Idea Ultimate
-    - [Poetry](https://poetry.eustace.io/docs/#installation)
+  - Google Drive Backup & Sync
+  - Docker for Mac
+  - IntelliJ Idea Ultimate
+  - [Poetry](https://poetry.eustace.io/docs/#installation)
 - Using `yarn`
-    - `gitmoji-cli`
+  - `gitmoji-cli`
 
 ### ZSH
 
@@ -98,7 +98,3 @@
 ### DNS
 
 - Configure CloudFlare DNS: https://1.1.1.1/dns/
-
-----------
-
-
