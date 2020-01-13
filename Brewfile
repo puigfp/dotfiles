@@ -56,6 +56,7 @@ cask "adobe-creative-cloud"
 
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
+cask "font-cascadia"
 
 tap "homebrew/cask-drivers"
 cask "logitech-options"
