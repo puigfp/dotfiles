@@ -32,9 +32,10 @@
   - Screen Saver:
     - Start after -> Never
 - General
-  - Appearance: Dark
+  - Appearance: dark
   - Accent color: purple
   - Hightlight color: graphite
+  - Close windows when quitting an app: false (see [iterm2 doc](https://iterm2.com/documentation-restoration.html))
 - Displays
   - Scale -> More Space
 - Dock
