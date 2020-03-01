@@ -1,7 +1,7 @@
 {
     "breadcrumbs.enabled": true,
 
-    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono'",
+    "editor.fontFamily": "'FiraCode-Retina', 'Fira Code', 'Cascadia Code', 'Droid Sans Mono'",
     "editor.fontSize": 13,
     "editor.fontLigatures": true,
     "editor.minimap.enabled": false,
@@ -42,6 +42,8 @@
 
     "go.useLanguageServer": true,
     "go.formatTool": "goimports",
+
+    "latex-workshop.view.pdf.viewer": "tab",
 
     "cSpell.userWords": [],
 }
