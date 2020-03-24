@@ -6,6 +6,8 @@
 
 - install brew: https://brew.sh/
 
+- setup completions: https://docs.brew.sh/Shell-Completion
+
 - install/upgrade all the things
 
   ```sh

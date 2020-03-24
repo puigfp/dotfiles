@@ -67,17 +67,17 @@
 
 - Generate SSH key: `ssh-keygen -t rsa -b 8192 -C francisco@puigfp -o`
 
-### Brew
+### Stuff not available on Brew
 
-- [Installation instructions](https://brew.sh/)
-- [Shell Completion Docs](https://docs.brew.sh/Shell-Completion)
-- Standard (`brew install`): see README
-- Not available on Brew:
+- Manual install
+
+  - [Xbox Controller driver](https://github.com/360Controller/360Controller/releases/)
   - Google Drive Backup & Sync
   - Docker for Mac
   - IntelliJ Idea Ultimate
   - [Poetry](https://poetry.eustace.io/docs/#installation)
-- Using `yarn`
+
+- Using `npm install --global`
   - `gitmoji-cli`
 
 ### ZSH
