@@ -59,6 +59,7 @@ cask "rstudio"
 cask "adobe-acrobat-reader"
 cask "adobe-creative-cloud"
 cask "musicbrainz-picard"
+cask "drawio"
 
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
