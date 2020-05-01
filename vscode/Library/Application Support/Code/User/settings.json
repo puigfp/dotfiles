@@ -3,7 +3,7 @@
 
     "editor.fontFamily": "'FiraCode-Retina', 'Fira Code', 'Cascadia Code', 'Droid Sans Mono'",
     "editor.fontSize": 13,
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": false,
     "editor.minimap.enabled": false,
     "editor.insertSpaces": true,
     "editor.rulers": [ 80, 100 ],
