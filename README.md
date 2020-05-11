@@ -2,6 +2,14 @@
 
 ## cheatsheet
 
+### xcode commands line tools
+
+- install cli tools
+
+  ```sh
+  xcode-select --install
+  ```
+
 ### brew
 
 - install brew: https://brew.sh/
