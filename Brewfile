@@ -66,6 +66,7 @@ brew "kubectx"
 brew "kubernetes-cli"
 brew "kubernetes-helm"
 brew "rbenv"
+brew "black"
 
 cask "virtualbox"
 cask "vagrant"
