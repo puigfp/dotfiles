@@ -34,6 +34,20 @@
   brew bundle cleanup --force
   ```
 
+### zsh
+
+- add brew-installed zsh to standard shells:
+
+  ```sh
+  sudo sh -c "echo $(which zsh) >> /etc/shells"
+  ```
+
+- change user shell
+
+  ```sh
+  chsh -s $(which zsh)
+  ```
+
 ### stow
 
 - simlink dotfiles dry run
@@ -62,15 +76,15 @@
   git submodule foreach git pull origin master
   ```
 
-### visual studio code extensions
+### visual studio code
 
-- backup
+- backup extensions
 
   ```sh
   code --list-extensions | sort > vscode_extensions
   ```
 
-- restore
+- restore extensions
 
   ```sh
   code --install-extension <extension>
