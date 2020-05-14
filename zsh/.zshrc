@@ -96,3 +96,6 @@ export AWS_VAULT_KEYCHAIN_NAME=login
 # tweak session times so you don't have to re-enter passwords every 5min
 export AWS_SESSION_TTL=24h
 export AWS_ASSUME_ROLE_TTL=1h
+
+# create GITLAB_TOKEN env var
+source $HOME/.gitlabrc
