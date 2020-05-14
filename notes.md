@@ -80,11 +80,6 @@
 - Using `npm install --global`
   - `gitmoji-cli`
 
-### ZSH
-
-- Add brew-installed zsh to standard shells: `sudo sh -c "echo $(which zsh) >> /etc/shells"`
-- Change user shell `chsh -s $(which zsh)`
-
 ### iTerm2
 
 - [Instructions for syncing its config with this repo](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
