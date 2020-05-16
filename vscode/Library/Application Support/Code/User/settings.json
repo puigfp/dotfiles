@@ -46,7 +46,4 @@
     "latex-workshop.view.pdf.viewer": "tab",
 
     "cSpell.userWords": [],
-
-    "r.bracketedPaste": true,
-    "r.sessionWatcher": true,
 }
