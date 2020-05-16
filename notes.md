@@ -61,7 +61,7 @@
   - Automatically rearange Spaces based on most recent use -> Disable
 - Accessibility
   - Pointer Control
-    - Ignore built-in trackpac ... -> Enable
+    - Ignore built-in trackpad ... -> Enable
 - Via CLI
   - Hide desktop icons `defaults write com.apple.finder CreateDesktop false` (requires a `killall Finder` to be effective)
   - Fix font rendering ([blog post](https://ahmadawais.com/fix-macos-mojave-font-rendering-issue/)): `defaults write -g CGFontRenderingFontSmoothingDisabled -bool FALSE` (requires a logout to be effective)
