@@ -35,6 +35,7 @@ brew "geckodriver"
 brew "wget"
 brew "ffmpeg"
 brew "youtube-dl"
+brew "exiftool"
 
 tap "homebrew/cask"
 cask "google-chrome"
