@@ -70,6 +70,12 @@
   git clone --recurse-submodules
   ```
 
+- init submodules (useful when you forgot the `--recurse-submodules` when cloning)
+
+  ```sh
+  git submodule update --init --recursive
+  ```
+
 - pull latest master of all submodules
 
   ```sh
