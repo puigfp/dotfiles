@@ -1,0 +1,4 @@
+# Not having a .stow-local-ignore file is equivalent to having a default
+# .stow-local-ignore file that has some commonly ignored paths, including
+# .gitignore. Therefore, the intent of this empty .stow-local-ignore file is to
+# tell stow not to ignore the .gitignore file of this folder.
