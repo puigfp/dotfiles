@@ -14,7 +14,7 @@ fi
 
 local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
 local git_branch='$(git_prompt_info)%{$reset_color%}'
-local kube_ctx='%{$fg[magenta]%}[$(kubectx --current)]%{$reset_color%}'
+local kube_ctx='%{$fg[magenta]%}[$(kubectx --current)/$(kubens --current)]%{$reset_color%}'
 
 PROMPT="${user_host} ${current_dir} ${git_branch}${kube_ctx}
 %B${user_symbol}%b "
