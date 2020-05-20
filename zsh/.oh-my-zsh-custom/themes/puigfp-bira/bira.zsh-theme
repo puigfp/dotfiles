@@ -14,9 +14,24 @@ fi
 
 local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
 local git_branch='$(git_prompt_info)%{$reset_color%}'
-local kube_ctx='%{$fg[magenta]%}[$(kubectx --current)/$(kubens --current)]%{$reset_color%}'
 
-PROMPT="${user_host} ${current_dir} ${git_branch}${kube_ctx}
+function kube_status_str {
+    local kube_ctx=$(kubectx --current)
+    local kube_ns=$(kubens --current)
+
+    local str=''
+    local color='magenta'
+    if [[ $kube_ctx == *"prod.dog"* ]]; then
+        str="!! ${kube_ctx}/${kube_ns} !!"
+        color='red'
+    else
+        str="${kube_ctx}/${kube_ns}"
+    fi
+    echo "%{$fg[${color}]%}[${str}]%{$reset_color%}"
+}
+local kube_status='$(kube_status_str)'
+
+PROMPT="${user_host} ${current_dir} ${git_branch}${kube_status}
 %B${user_symbol}%b "
 RPS1="%B${return_code}%b"
 
