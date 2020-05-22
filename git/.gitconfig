@@ -3,3 +3,5 @@
 	name = Francisco-Pierre Puig
 [core]
 	excludesfile = /Users/francisco/.gitignore
+[branch]
+	sort = -committerdate
