@@ -42,6 +42,7 @@
   - Minimize windows using -> Scale effect
   - Minimize windows into application icon -> Enable
   - Show recent applications in dock -> Disable
+  - Position on Screen -> Left
 - Keyboard
   - Turn keyboard backlight off after 5 seconds of inactivity
   - Customize Touch Bar -> Brightness Slider, Play/Pause, Volume Slider, Mute
