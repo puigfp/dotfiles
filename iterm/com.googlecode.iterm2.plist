@@ -682,7 +682,7 @@ Resize Split Pane.Move Divider Right</string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 336 1881 1057 0 0 1440 900 </string>
+	<string>1920 752 1881 1057 1920 192 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1952 65 560 399 1680 -30 1920 1080 </string>
 	<key>NeverWarnAboutShortLivedSessions_4080C57F-032F-44CC-8041-E4DD2B76465D</key>
@@ -1357,11 +1357,11 @@ Resize Split Pane.Move Divider Right</string>
 			<key>Name</key>
 			<string></string>
 			<key>Non Ascii Font</key>
-			<string>Monaco 12</string>
+			<string>MesloLGM-RegularForPowerline 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Retina 12</string>
+			<string>MesloLGS-NF-Regular 11</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1455,6 +1455,7 @@ Resize Split Pane.Move Divider Right</string>
 	<array>
 		<string>3.3.6</string>
 		<string>3.3.8</string>
+		<string>3.3.10</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.7</string>
@@ -1464,7 +1465,9 @@ Resize Split Pane.Move Divider Right</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Fira Code</string>
+		<string>MesloLGS NF</string>
+		<string>Meslo LG M DZ for Powerline</string>
+		<string>Meslo LG M for Powerline</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
@@ -1476,16 +1479,16 @@ Resize Split Pane.Move Divider Right</string>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1080}}</string>
+		<string>{{1920, 192}, {1280, 800}}</string>
 		<key>topLeft</key>
-		<string>{261, 695}</string>
+		<string>{1974, 903}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>69C6542A-6227-4870-AF79-DBB64BF4B160</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>39</integer>
+	<integer>46</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2330,7 +2333,7 @@ Resize Split Pane.Move Divider Right</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.9</string>
+	<string>3.3.10</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
