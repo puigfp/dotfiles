@@ -1,7 +1,12 @@
-[user]
-	email = francisco.puig@datadoghq.com
-	name = Francisco-Pierre Puig
 [core]
 	excludesfile = /Users/francisco/.gitignore
 [branch]
 	sort = -committerdate
+
+[includeIf "gitdir:~/dd/"]
+	path = ~/.gitconfig-work
+[includeIf "gitdir:~/go/src/github.com/DataDog/"]
+	path = ~/.gitconfig-work
+
+[includeIf "gitdir:~/dev/"]
+	path = ~/.gitconfig-personal
