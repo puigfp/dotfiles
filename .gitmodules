@@ -8,6 +8,9 @@
 [submodule "zsh/.oh-my-zsh-custom/plugins/zsh-autosuggestions"]
 	path = zsh/.oh-my-zsh-custom/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "zsh/.oh-my-zsh-custom/themes/powerlevel10k"]
+	path = zsh/.oh-my-zsh-custom/themes/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git
 
 # neovim
 [submodule "vim/.config/nvim/vim-plug"]
