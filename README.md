@@ -4,7 +4,7 @@
 
 ### xcode commands line tools
 
-- install cli tools
+- install cli tools (C/C++ compiler and other things)
 
   ```sh
   xcode-select --install
@@ -81,6 +81,16 @@
   ```sh
   git submodule foreach git pull origin master
   ```
+
+### iterm
+
+- [install patched Meslo font for powerline10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
+
+  ```sh
+  p10k configure
+  ```
+
+  (quit after the font is installed)
 
 ### visual studio code
 
