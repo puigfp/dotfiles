@@ -67,7 +67,6 @@ cask "istat-menus"
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
 cask "font-cascadia"
-cask "font-meslo-for-powerline"
 
 tap "homebrew/cask-drivers"
 cask "logitech-options"
