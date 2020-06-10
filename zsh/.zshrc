@@ -66,7 +66,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # export PIPENV_VENV_IN_PROJECT="enabled"
 # export PIP_REQUIRE_VIRTUALENV=true
 # export PATH="$HOME/.poetry/bin:$PATH"
-# eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 
 # Brew
 brew-upgrade-all() {
