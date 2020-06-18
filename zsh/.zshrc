@@ -66,7 +66,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # export PIPENV_VENV_IN_PROJECT="enabled"
 # export PIP_REQUIRE_VIRTUALENV=true
 # export PATH="$HOME/.poetry/bin:$PATH"
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
 # Brew
 brew-upgrade-all() {
@@ -106,6 +106,12 @@ export AWS_ASSUME_ROLE_TTL=1h
 
 # create GITLAB_TOKEN env var
 source $HOME/.gitlabrc
+
+# use java 8 for dd-analytics
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
 # ------------
 # powerline10k
