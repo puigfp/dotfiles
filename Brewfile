@@ -69,6 +69,18 @@ brew "datadog/tap/kubectl-multiexec"
 brew "datadog/tap/kubectl-template"
 brew "datadog/tap/ddtool"
 
+tap "homebrew/cask-versions"
+cask "homebrew/cask-versions/adoptopenjdk8"
+brew "scala211"
+brew "sbt"
+
+tap "datadog/data-eng-tools", "git@github.com:DataDog/data-eng-tools.git"
+brew "data-eng-tools"
+
+brew "mysql"
+brew "postgresql@9.6"
+brew "openssl"
+
 brew "tfenv"
 brew "awscli@1"
 brew "vault"
