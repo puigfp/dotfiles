@@ -63,6 +63,7 @@ cask "adobe-creative-cloud"
 cask "musicbrainz-picard"
 cask "drawio"
 cask "istat-menus"
+cask "postman"
 
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
