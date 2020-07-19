@@ -2,6 +2,12 @@
 
 ## cheatsheet
 
+### sane macOS parameters
+
+```sh
+./defaults.sh
+```
+
 ### xcode commands line tools
 
 - install cli tools (C/C++ compiler and other things)
