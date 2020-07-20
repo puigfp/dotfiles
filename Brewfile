@@ -47,6 +47,7 @@ cask "vlc"
 cask "karabiner-elements"
 cask "drawio"
 cask "istat-menus"
+cask "postman"
 
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
