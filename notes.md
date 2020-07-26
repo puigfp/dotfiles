@@ -27,10 +27,6 @@
 
 #### Appearance
 
-- Desktop & Screen Saver
-  - Desktop: RGB color -> (20, 0, 30)
-  - Screen Saver:
-    - Start after -> Never
 - Keyboard
   - Turn keyboard backlight off after 5 seconds of inactivity
   - Customize Touch Bar -> Brightness Slider, Play/Pause, Volume Slider, Mute
