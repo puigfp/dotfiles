@@ -34,6 +34,20 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 # See https://ahmadawais.com/fix-macos-mojave-font-rendering-issue/
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
 
+# ---------
+# Auto-Lock
+# ---------
+
+# Start screensaver after 5 minutes of inactivity
+defaults -currentHost write com.apple.screensaver idleTime 300
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Turn off screen after 5 minutes of inactivity (right when the screensaver starts)
+sudo pmset -a displaysleep 5
+
 # ----------
 # Appearance
 # ----------
