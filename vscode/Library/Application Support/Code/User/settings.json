@@ -16,8 +16,11 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
 
     "[python]": {
-        "editor.rulers": [ 88 ], // black max line length
+        "editor.rulers": [ 120 ], // black max line length
+        "editor.formatOnSave": true
     },
+    "python.languageServer": "Pylance",
+    "python.formatting.provider": "black",
 
     "[rust]": {
         "editor.rulers": [ 80 ],
@@ -40,10 +43,14 @@
         "files.trimTrailingWhitespace": false
     },
 
-    "go.useLanguageServer": true,
+    "go.useLanguageServer": false,
     "go.formatTool": "goimports",
 
     "latex-workshop.view.pdf.viewer": "tab",
 
     "cSpell.userWords": [],
+
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
