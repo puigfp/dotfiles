@@ -92,5 +92,8 @@ brew "kubernetes-helm"
 brew "rbenv"
 brew "black"
 
+brew "yarn"
+brew "nodenv"
+
 cask "virtualbox"
 cask "vagrant"
