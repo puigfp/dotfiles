@@ -113,6 +113,9 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
+# init nodenv
+eval "$(nodenv init -)"
+
 # ------------
 # powerline10k
 # ------------
