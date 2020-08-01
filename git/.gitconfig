@@ -5,7 +5,10 @@
 
 [user]
 	email = francisco.puig@datadoghq.com
-	name = Francisco-Pierre Puig
+	name = Francisco Puig
+
+[push]
+	default =current
 
 [pull]
 	ff = only
