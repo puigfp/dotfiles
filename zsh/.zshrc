@@ -116,6 +116,18 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # init nodenv
 eval "$(nodenv init -)"
 
+# k8s aliases
+delancie-insights() {
+  context=$1
+  namespace=$2
+  cmd=$3
+  pod=$(kubectl get pods --context $context --namespace $namespace --field-selector=status.phase=Running -l app=worker,service=delancie-insights --sort-by=.metadata.creationTimestamp --output=json | jq -r ".items[-1].metadata.name" )
+  kubectl exec --context $context --namespace $namespace -it -c delancie-worker $pod -- $(echo $cmd)
+}
+
+alias delancie-insights-prod='delancie-insights plain2.us1.prod.dog delancie "dogq shell"'
+alias delancie-insights-staging='delancie-insights plain2.us1.staging.dog delancie "dogq shell"'
+
 # ------------
 # powerline10k
 # ------------
