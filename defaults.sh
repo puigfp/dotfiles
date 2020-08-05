@@ -34,6 +34,10 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 # See https://ahmadawais.com/fix-macos-mojave-font-rendering-issue/
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
 
+# Default screenshots location
+mkdir -p ~/Pictures/screenshots
+defaults write com.apple.screencapture location ~/Pictures/screenshots
+
 # ---------
 # Auto-Lock
 # ---------
