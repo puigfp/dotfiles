@@ -125,8 +125,18 @@ delancie-insights() {
   kubectl exec --context $context --namespace $namespace -it -c delancie-worker $pod -- $(echo $cmd)
 }
 
-alias delancie-insights-prod='delancie-insights plain2.us1.prod.dog delancie "dogq shell"'
-alias delancie-insights-staging='delancie-insights plain2.us1.staging.dog delancie "dogq shell"'
+alias delancie-insights-us1-prod='delancie-insights plain2.us1.prod.dog delancie "dogq shell"'
+alias delancie-insights-us1-staging='delancie-insights plain2.us1.staging.dog delancie "dogq shell"'
+
+elasticsearch-port-forward() {
+  context=$1
+  namespace=$2
+  pod=$(kubectl get pods --context $context --namespace $namespace --field-selector=status.phase=Running -l cluster=watchdog,elasticsearch-role=client --output=json | jq -r ".items[-1].metadata.name" )
+  kubectl --context $context port-forward $pod 9200
+}
+
+alias elasticsearch-port-forward-us1-staging='elasticsearch-port-forward chinook.us1.staging.dog watchdog'
+alias elasticsearch-port-forward-us1-prod='elasticsearch-port-forward general1.us1.prod.dog watchdog'
 
 # ------------
 # powerline10k
