@@ -149,6 +149,27 @@ nbt-open() {
 alias nbt-open-us1-staging='nbt-open nbt-ds-staging'
 alias nbt-open-us1-prod='nbt-open nbt-ds-us1-prod'
 
+nbt-init() {
+  context=$1
+  nbt init --context $context francisco
+}
+alias nbt-init-us1-staging='nbt-init nbt-ds-staging'
+alias nbt-init-us1-prod='nbt-init nbt-ds-us1-prod'
+
+nbt-pull() {
+  context=$1
+  nbt pull --context $context francisco
+}
+alias nbt-pull-us1-staging='nbt-pull nbt-ds-staging'
+alias nbt-pull-us1-prod='nbt-pull nbt-ds-us1-prod'
+
+nbt-push() {
+  context=$1
+  nbt push --context $context francisco
+}
+alias nbt-push-us1-staging='nbt-push nbt-ds-staging'
+alias nbt-push-us1-prod='nbt-push nbt-ds-us1-prod'
+
 # ------------
 # powerline10k
 # ------------
