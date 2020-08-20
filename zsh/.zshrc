@@ -116,6 +116,10 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # init nodenv
 eval "$(nodenv init -)"
 
+# aws aliases
+alias s3p="aws-vault exec prod-engineering -- aws s3"
+alias s3s="aws-vault exec prod-engineering -- aws s3"
+
 # k8s aliases
 delancie-insights() {
   context=$1
@@ -137,6 +141,13 @@ elasticsearch-port-forward() {
 
 alias elasticsearch-port-forward-us1-staging='elasticsearch-port-forward chinook.us1.staging.dog watchdog'
 alias elasticsearch-port-forward-us1-prod='elasticsearch-port-forward general1.us1.prod.dog watchdog'
+
+nbt-open() {
+  context=$1
+  nbt open --context $context francisco
+}
+alias nbt-open-us1-staging='nbt-open nbt-ds-staging'
+alias nbt-open-us1-prod='nbt-open nbt-ds-us1-prod'
 
 # ------------
 # powerline10k
