@@ -52,5 +52,12 @@
 
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    }
+    },
+
+    "remote.SSH.defaultExtensions": [
+        "eamodio.gitlens",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "streetsidesoftware.code-spell-checker"
+    ]
 }
