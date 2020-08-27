@@ -146,6 +146,7 @@ elasticsearch-port-forward() {
 alias elasticsearch-port-forward-us1-staging='elasticsearch-port-forward chinook.us1.staging.dog watchdog'
 alias elasticsearch-port-forward-us1-prod='elasticsearch-port-forward general1.us1.prod.dog watchdog'
 
+# nbt aliases
 nbt-open() {
   context=$1
   nbt open --context $context francisco
@@ -174,11 +175,19 @@ nbt-push() {
 alias nbt-push-us1-staging='nbt-push nbt-ds-staging'
 alias nbt-push-us1-prod='nbt-push nbt-ds-us1-prod'
 
+# vault aliases
 vault-login() {
   vault=$1
   export VAULT_ADDR=https://vault.$1
   vault login -method=oidc
 }
+
+# appgate aliases
+GOVCLOUD_APPGATE_URL="appgate://sdp.fed.d.dog/eyJzcGEiOnsibW9kZSI6IlRDUCIsIm5hbWUiOiJkZWZhdWx0Iiwia2V5IjoiMGI4NDMyZTEyYWQ5Yzk1YjY4ZDRlOTAwM2YzMDFkMmMxYTJkN2NlY2E5ZjhmZDM5MDQxOTljMjgwN2MyNjczNCJ9LCJjYUZpbmdlcnByaW50IjoiYzQ2YjA3NGU4OGJmNTk2MzlmNGVjMDFiMTIwNDE2ZjcyNTExYzM1ZmQ0YmY5M2M2Y2I3NDIyNDVjNmM2MzEwYyIsImlkZW50aXR5UHJvdmlkZXJOYW1lIjoiZ29vZ2xlIn0="
+DATADOG_APPGATE_URL="appgate://appgate.datadoghq.com/eyJjYUZpbmdlcnByaW50IjoiN2MxMTEwNWZkNzAzNWYzMjE5NTdiYjdhZDQ0ZTIwZjc0YTZkZTNiYWM3ZWIzZTkzNWJmNjAzMDAzOTI4NmYwYyIsImlkZW50aXR5UHJvdmlkZXJOYW1lIjoiTG9naW4gV2l0aCBHb29nbGUifQ=="
+
+alias appgate-fed="killall -9 'AppGate SDP' || true && open $GOVCLOUD_APPGATE_URL"
+alias appgate-dd="killall -9 'AppGate SDP' || true && open $DATADOG_APPGATE_URL"
 
 # ------------
 # powerline10k
