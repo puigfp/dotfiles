@@ -108,3 +108,6 @@ brew "nodenv"
 
 cask "virtualbox"
 cask "vagrant"
+
+tap "versent/homebrew-taps"
+brew "saml2aws"
