@@ -121,6 +121,8 @@ alias aws-us1-staging="aws-vault exec staging-engineering -- aws s3"
 alias aws-us1-prod="aws-vault exec prod-engineering -- aws"
 alias aws-us1-fed="aws --profile govcloud-us1-fed-human-engineering"
 
+alias aws-govcloud-login="saml2aws login -a govcloud-us1-fed-human-engineering"
+
 # k8s aliases
 delancie-insights() {
   context=$1
