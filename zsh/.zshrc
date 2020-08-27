@@ -117,8 +117,9 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 eval "$(nodenv init -)"
 
 # aws aliases
-alias s3p="aws-vault exec prod-engineering -- aws s3"
-alias s3s="aws-vault exec prod-engineering -- aws s3"
+alias aws-us1-staging="aws-vault exec staging-engineering -- aws s3"
+alias aws-us1-prod="aws-vault exec prod-engineering -- aws"
+alias aws-us1-fed="aws --profile govcloud-us1-fed-human-engineering"
 
 # k8s aliases
 delancie-insights() {
@@ -129,8 +130,9 @@ delancie-insights() {
   kubectl exec --context $context --namespace $namespace -it -c delancie-worker $pod -- $(echo $cmd)
 }
 
-alias delancie-insights-us1-prod='delancie-insights plain2.us1.prod.dog delancie "dogq shell"'
 alias delancie-insights-us1-staging='delancie-insights plain2.us1.staging.dog delancie "dogq shell"'
+alias delancie-insights-us1-prod='delancie-insights plain2.us1.prod.dog delancie "dogq shell"'
+alias delancie-insights-us1-fed='delancie-insights plain1.us1.fed.dog delancie "dogq shell"'
 
 elasticsearch-port-forward() {
   context=$1
@@ -169,6 +171,12 @@ nbt-push() {
 }
 alias nbt-push-us1-staging='nbt-push nbt-ds-staging'
 alias nbt-push-us1-prod='nbt-push nbt-ds-us1-prod'
+
+vault-login() {
+  vault=$1
+  export VAULT_ADDR=https://vault.$1
+  vault login -method=oidc
+}
 
 # ------------
 # powerline10k
