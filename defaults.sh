@@ -12,6 +12,12 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Set hostname
+HOSTNAME=puigfp
+sudo scutil --set ComputerName $HOSTNAME
+sudo scutil --set HostName $HOSTNAME
+sudo scutil --set LocalHostName $HOSTNAME
+
 # Disable "close windows when quitting an app"
 # See iTerm2's documentation: https://iterm2.com/documentation-restoration.html
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool true
