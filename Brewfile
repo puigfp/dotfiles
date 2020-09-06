@@ -66,6 +66,7 @@ cask "musicbrainz-picard"
 cask "drawio"
 cask "istat-menus"
 cask "postman"
+cask "monitorcontrol"
 
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
