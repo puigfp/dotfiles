@@ -62,11 +62,15 @@ export PATH="${GOPATH}/bin:${PATH}"
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# LateX
+# for some reasons, path_helper doesn't pick up /etc/paths.d/TeX
+export PATH="/Library/TeX/texbin:$PATH"
+
 # Python
 # export PIPENV_VENV_IN_PROJECT="enabled"
 # export PIP_REQUIRE_VIRTUALENV=true
 # export PATH="$HOME/.poetry/bin:$PATH"
-# eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 
 # Brew
 brew-upgrade-all() {
@@ -113,8 +117,12 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
+# black
+alias black="/Users/francisco.puig/.pyenv/versions/3.8.5/envs/black/bin/black"
+
 # init nodenv
 eval "$(nodenv init -)"
+export NODE_OPTIONS="--max-old-space-size=8192"
 
 # aws aliases
 alias aws-us1-staging="aws-vault exec staging-engineering -- aws s3"
@@ -135,6 +143,7 @@ delancie-insights() {
 alias delancie-insights-us1-staging='delancie-insights plain2.us1.staging.dog delancie "dogq shell"'
 alias delancie-insights-us1-prod='delancie-insights plain2.us1.prod.dog delancie "dogq shell"'
 alias delancie-insights-us1-fed='delancie-insights plain1.us1.fed.dog delancie "dogq shell"'
+alias delancie-insights-us3-prod='delancie-insights plain4.us3.prod.dog delancie "dogq shell"'
 
 elasticsearch-port-forward() {
   context=$1
