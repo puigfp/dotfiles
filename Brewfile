@@ -94,6 +94,7 @@ brew "bazelisk"
 
 brew "tfenv"
 brew "awscli@1"
+brew "azure-cli"
 brew "vault"
 cask "google-cloud-sdk"
 brew "kubectx"
