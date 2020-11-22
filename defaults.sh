@@ -58,6 +58,9 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 # Turn off screen after 5 minutes of inactivity (right when the screensaver starts)
 sudo pmset -a displaysleep 5
 
+# Prevent bluetooth devices from waking computer
+defaults write -currentHost write com.apple.Bluetooth RemoteWakeEnabled -bool false
+
 # ----------
 # Appearance
 # ----------
@@ -152,6 +155,9 @@ defaults write com.apple.systemuiserver menuExtras -array \
     "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
     "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
     "/System/Library/CoreServices/Menu Extras/Volume.menu"
+
+# "Hide" date/time (in favor of iStatsMenu's widget)
+defaults write com.apple.menuextra.clock IsAnalog -bool true
 
 # -------------
 # Google Chrome
