@@ -28,6 +28,10 @@ plugins=(
   vagrant
 )
 
+# longer history
+HISTSIZE=10000000
+SAVEHIST=10000000
+
 # make Homebrew's completions available
 # please see https://docs.brew.sh/Shell-Completion
 if type brew &>/dev/null; then
