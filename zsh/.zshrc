@@ -144,10 +144,16 @@ delancie-insights() {
   kubectl exec --context $context --namespace $namespace -it -c delancie-worker $pod -- $(echo $cmd)
 }
 
-alias delancie-insights-us1-staging='delancie-insights plain2.us1.staging.dog delancie "dogq shell"'
-alias delancie-insights-us1-prod='delancie-insights plain2.us1.prod.dog delancie "dogq shell"'
-alias delancie-insights-us1-fed='delancie-insights plain1.us1.fed.dog delancie "dogq shell"'
-alias delancie-insights-us3-prod='delancie-insights plain4.us3.prod.dog delancie "dogq shell"'
+alias delancie-insights-us1-staging='delancie-insights plain2.us1.staging.dog delancie "dogg shell"'
+alias delancie-insights-us1-prod='delancie-insights plain2.us1.prod.dog delancie "dogg shell"'
+alias delancie-insights-us1-fed='delancie-insights plain1.us1.fed.dog delancie "dogg shell"'
+alias delancie-insights-us3-prod='delancie-insights plain4.us3.prod.dog delancie "dogg shell"'
+alias delancie-insights-eu1-prod='delancie-insights app3.eu1.prod.dog datadog "dogg shell"'
+alias delancie-insights-us1-staging-sh='delancie-insights plain2.us1.staging.dog delancie "bash"'
+alias delancie-insights-us1-prod-sh='delancie-insights plain2.us1.prod.dog delancie "bash"'
+alias delancie-insights-us1-fed-sh='delancie-insights plain1.us1.fed.dog delancie "bash"'
+alias delancie-insights-us3-prod-sh='delancie-insights plain4.us3.prod.dog delancie "bash"'
+alias delancie-insights-eu1-prod-sh='delancie-insights app3.eu1.prod.dog datadog "bash"'
 
 elasticsearch-port-forward() {
   context=$1
@@ -174,19 +180,19 @@ nbt-init() {
 alias nbt-init-us1-staging='nbt-init nbt-ds-staging'
 alias nbt-init-us1-prod='nbt-init nbt-ds-us1-prod'
 
-nbt-pull() {
+nbt-sync() {
   context=$1
-  nbt pull --context $context francisco
+  nbt sync --context $context francisco
 }
-alias nbt-pull-us1-staging='nbt-pull nbt-ds-staging'
-alias nbt-pull-us1-prod='nbt-pull nbt-ds-us1-prod'
+alias nbt-sync-us1-staging='nbt-sync nbt-ds-staging'
+alias nbt-sync-us1-prod='nbt-sync nbt-ds-us1-prod'
 
-nbt-push() {
+nbt-resume() {
   context=$1
-  nbt push --context $context francisco
+  nbt resume --context $context francisco
 }
-alias nbt-push-us1-staging='nbt-push nbt-ds-staging'
-alias nbt-push-us1-prod='nbt-push nbt-ds-us1-prod'
+alias nbt-resume-us1-staging='nbt-resume nbt-ds-staging'
+alias nbt-resume-us1-prod='nbt-resume nbt-ds-us1-prod'
 
 # vault aliases
 vault-login() {
