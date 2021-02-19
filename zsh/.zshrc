@@ -124,6 +124,9 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # black
 alias black="/Users/francisco.puig/.pyenv/versions/3.8.5/envs/black/bin/black"
 
+# isort
+alias isort="/Users/francisco.puig/.pyenv/versions/3.8.5/envs/isort/bin/isort"
+
 # init nodenv
 eval "$(nodenv init -)"
 export NODE_OPTIONS="--max-old-space-size=8192"
