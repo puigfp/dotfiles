@@ -2,6 +2,9 @@ BazelBuild.vscode-bazel
 CoenraadS.bracket-pair-colorizer
 CraigMaslowski.erb
 James-Yu.latex-workshop
+LawrenceGrant.cql
+arcanis.vscode-zipfs
+ban.spellright
 bungcip.better-toml
 dbaeumer.vscode-eslint
 eamodio.gitlens
@@ -15,14 +18,15 @@ mechatroner.rainbow-csv
 ms-azuretools.vscode-docker
 ms-python.python
 ms-python.vscode-pylance
+ms-toolsai.jupyter
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
+pjmiravalle.terraform-advanced-syntax-highlighting
 rebornix.ruby
 redhat.vscode-xml
 redhat.vscode-yaml
 rust-lang.rust
 sdras.night-owl
 serayuzgur.crates
-streetsidesoftware.code-spell-checker
 wingrunr21.vscode-ruby
 zxh404.vscode-proto3
