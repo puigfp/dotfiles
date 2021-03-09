@@ -49,6 +49,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"; # gnu stuff
   export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"; # grep
   export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"; # sed
+  export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH" # find
 fi
 
 # colors
