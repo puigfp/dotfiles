@@ -168,35 +168,6 @@ elasticsearch-port-forward() {
 alias elasticsearch-port-forward-us1-staging='elasticsearch-port-forward chinook.us1.staging.dog watchdog'
 alias elasticsearch-port-forward-us1-prod='elasticsearch-port-forward general1.us1.prod.dog watchdog'
 
-# nbt aliases
-nbt-open() {
-  context=$1
-  nbt open --context $context francisco
-}
-alias nbt-open-us1-staging='nbt-open nbt-ds-staging'
-alias nbt-open-us1-prod='nbt-open nbt-ds-us1-prod'
-
-nbt-init() {
-  context=$1
-  nbt init --context $context francisco
-}
-alias nbt-init-us1-staging='nbt-init nbt-ds-staging'
-alias nbt-init-us1-prod='nbt-init nbt-ds-us1-prod'
-
-nbt-sync() {
-  context=$1
-  nbt sync --context $context francisco
-}
-alias nbt-sync-us1-staging='nbt-sync nbt-ds-staging'
-alias nbt-sync-us1-prod='nbt-sync nbt-ds-us1-prod'
-
-nbt-resume() {
-  context=$1
-  nbt resume --context $context francisco
-}
-alias nbt-resume-us1-staging='nbt-resume nbt-ds-staging'
-alias nbt-resume-us1-prod='nbt-resume nbt-ds-us1-prod'
-
 # vault aliases
 vault-login() {
   vault=$1
@@ -210,6 +181,31 @@ DATADOG_APPGATE_URL="appgate://appgate.datadoghq.com/eyJjYUZpbmdlcnByaW50IjoiN2M
 
 alias appgate-fed="killall -9 'AppGate SDP' || true && open $GOVCLOUD_APPGATE_URL"
 alias appgate-dd="killall -9 'AppGate SDP' || true && open $DATADOG_APPGATE_URL"
+
+# this is working on zsh, I haven't tested it in other shells
+function _update_stubs {
+    sub=$1
+    # replace with your path to `protoc-gen-mypy`
+    protoc --plugin=protoc-gen-mypy=/Users/francisco.puig/.pyenv/versions/3.8.5/envs/prototypehint/bin/protoc-gen-mypy \
+        --mypy_out=dd/pb \
+        -I dd/pb/proto/ \
+        -I vendor/ \
+        $(find dd/pb/proto/$sub -name "*.proto" -exec echo -n "{} " \;)
+    find dd/pb/$sub -name "*.pyi" -exec /usr/bin/sed -i "" "s/from $sub/from dd.pb.$sub/" {} \;
+    # using well know types import
+    # allows to add autocompletion for official google protobuf wrappers, e.g. `ToSeconds` on a Timestamp
+    find dd/pb/$sub -name "*.pyi" -exec /usr/bin/sed -i "" "s/from google.protobuf.timestamp_pb2 import/from google.protobuf.internal.well_known_types import /" {} \;
+}
+
+function update_dogweb_stubs {
+    cd $DATADOG_ROOT/dogweb
+    for sub in $(find dd/pb/proto -mindepth 1 -maxdepth 1 -type d -printf "%f\n"); do
+        _update_stubs $sub
+    done
+    # parallel version that I can not get to work
+    # find dd/pb/proto -mindepth 1 -maxdepth 1 -type d -printf "%f\n" | xargs -I {} -P8 sh -c '_update_stubs {}'
+    cd -
+}
 
 # ------------
 # powerline10k
