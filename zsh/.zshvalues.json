@@ -1,0 +1,34 @@
+{
+    "delancie": {
+        "us1.prod": {
+            "insights": {
+                "context": "psyduck.us1.prod.dog",
+                "namespace": "delancie"
+            }
+        },
+        "us1.staging": {
+            "insights": {
+                "context": "stripe.us1.staging.dog",
+                "namespace": "delancie"
+            }
+        },
+        "eu1.prod": {
+            "insights": {
+                "context": "app3.eu1.prod.dog",
+                "namespace": "datadog"
+            }
+        },
+        "us3.prod": {
+            "insights": {
+                "context": "plain4.us3.prod.dog",
+                "namespace": "delancie"
+            }
+        },
+        "us1.fed": {
+            "insights": {
+                "context": "plain1.us1.fed.dog",
+                "namespace": "delancie"
+            }
+        }
+    }
+}

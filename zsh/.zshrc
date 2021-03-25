@@ -140,24 +140,23 @@ alias aws-us1-fed="aws --profile govcloud-us1-fed-human-engineering"
 alias aws-govcloud-login="saml2aws login -a govcloud-us1-fed-human-engineering"
 
 # k8s aliases
-delancie-insights() {
-  context=$1
-  namespace=$2
-  cmd=$3
-  pod=$(kubectl get pods --context $context --namespace $namespace --field-selector=status.phase=Running -l app=worker,service=delancie-insights --sort-by=.metadata.creationTimestamp --output=json | jq -r ".items[-1].metadata.name" )
-  kubectl exec --context $context --namespace $namespace -it -c delancie-worker $pod -- $(echo $cmd)
+exe() {
+  echo "$@"
+  "$@"
 }
 
-alias delancie-insights-us1-staging='delancie-insights plain2.us1.staging.dog delancie "dogg shell"'
-alias delancie-insights-us1-prod='delancie-insights plain2.us1.prod.dog delancie "dogg shell"'
-alias delancie-insights-us1-fed='delancie-insights plain1.us1.fed.dog delancie "dogg shell"'
-alias delancie-insights-us3-prod='delancie-insights plain4.us3.prod.dog delancie "dogg shell"'
-alias delancie-insights-eu1-prod='delancie-insights app3.eu1.prod.dog datadog "dogg shell"'
-alias delancie-insights-us1-staging-sh='delancie-insights plain2.us1.staging.dog delancie "bash"'
-alias delancie-insights-us1-prod-sh='delancie-insights plain2.us1.prod.dog delancie "bash"'
-alias delancie-insights-us1-fed-sh='delancie-insights plain1.us1.fed.dog delancie "bash"'
-alias delancie-insights-us3-prod-sh='delancie-insights plain4.us3.prod.dog delancie "bash"'
-alias delancie-insights-eu1-prod-sh='delancie-insights app3.eu1.prod.dog datadog "bash"'
+delancie-exec() {
+  datacenter=$1
+  flavor=$2
+  command=$3
+
+  conf=$(jq ".[\"delancie\"][\"$1\"][\"$2\"]" $HOME/.zshvalues.json)
+  context=$(jq -r .context <<< $conf)
+  namespace=$(jq -r .namespace <<< $conf)
+
+  pod=$(kubectl get pods --context $context --namespace $namespace --field-selector=status.phase=Running -l app=worker,service=delancie-insights --sort-by=.metadata.creationTimestamp --output=json | jq -r ".items[-1].metadata.name" )
+  exe kubectl exec --context $context --namespace $namespace -it -c delancie-worker $pod -- $(echo $command)
+}
 
 elasticsearch-port-forward() {
   context=$1
@@ -170,10 +169,11 @@ alias elasticsearch-port-forward-us1-staging='elasticsearch-port-forward chinook
 alias elasticsearch-port-forward-us1-prod='elasticsearch-port-forward general1.us1.prod.dog watchdog'
 
 # vault aliases
+# usage: vault-login us1.prod
 vault-login() {
   vault=$1
-  export VAULT_ADDR=https://vault.$1
-  vault login -method=oidc
+  export VAULT_ADDR=https://vault.$1.dog
+  export VAULT_TOKEN=$(vault login -method oidc -token-only)
 }
 
 # appgate aliases
