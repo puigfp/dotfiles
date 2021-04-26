@@ -59,7 +59,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 sudo pmset -a displaysleep 5
 
 # Prevent bluetooth devices from waking computer
-defaults write -currentHost write com.apple.Bluetooth RemoteWakeEnabled -bool false
+defaults -currentHost write com.apple.Bluetooth RemoteWakeEnabled -bool false
 
 # ----------
 # Appearance
