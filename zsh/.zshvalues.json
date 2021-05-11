@@ -2,12 +2,16 @@
     "delancie": {
         "us1.prod": {
             "insights": {
-                "context": "psyduck.us1.prod.dog",
+                "context": "plain2.us1.prod.dog",
                 "namespace": "delancie"
             }
         },
         "us1.staging": {
             "insights": {
+                "context": "stripe.us1.staging.dog",
+                "namespace": "delancie"
+            },
+            "correlations": {
                 "context": "stripe.us1.staging.dog",
                 "namespace": "delancie"
             }
