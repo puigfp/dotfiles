@@ -142,13 +142,14 @@ alias aws-govcloud-login="saml2aws login -a govcloud-us1-fed-human-engineering"
 # k8s aliases
 exe() {
   echo "$@"
-  "$@"
+  eval "$@"
 }
 
 delancie-exec() {
   datacenter=$1
   flavor=$2
   command=$3
+  command="bash -c \"(while true ; do echo -ne '\\000' ; sleep 30 ; done ) & $command\""
 
   conf=$(jq ".[\"delancie\"][\"$1\"][\"$2\"]" $HOME/.zshvalues.json)
   context=$(jq -r .context <<< $conf)
@@ -171,7 +172,6 @@ alias elasticsearch-port-forward-us1-prod='elasticsearch-port-forward general1.u
 # vault aliases
 # usage: vault-login us1.prod
 vault-login() {
-  vault=$1
   export VAULT_ADDR=https://vault.$1.dog
   export VAULT_TOKEN=$(vault login -method oidc -token-only)
 }
@@ -207,6 +207,9 @@ function update_dogweb_stubs {
     # find dd/pb/proto -mindepth 1 -maxdepth 1 -type d -printf "%f\n" | xargs -I {} -P8 sh -c '_update_stubs {}'
     cd -
 }
+
+# dstools
+alias dst='/Users/francisco.puig/.pyenv/versions/3.8.5/envs/dstools/bin/python -m dstools'
 
 # ------------
 # powerline10k
