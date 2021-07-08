@@ -7,9 +7,6 @@
 	email = francisco.puig@datadoghq.com
 	name = Francisco Puig
 
-[push]
-	default =current
-
 [pull]
 	ff = only
 
