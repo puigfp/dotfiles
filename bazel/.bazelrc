@@ -1,1 +1,6 @@
 startup --macos_qos_class=utility
+
+build --repository_cache=/Users/francisco.puig/.bazel/repo_cache
+build --disk_cache=/Users/francisco.puig/.bazel/disk_cache
+run --repository_cache=/Users/francisco.puig/.bazel/repo_cache
+run --disk_cache=/Users/francisco.puig/.bazel/disk_cache
