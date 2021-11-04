@@ -67,3 +67,15 @@
 ### DNS
 
 - Configure CloudFlare DNS: https://1.1.1.1/dns/
+
+### Telegram
+
+- macOS
+  - Appearance
+    - Bubble Mode -> Enable
+    - Theme -> Night accent
+
+- iOS
+  - Background: #000000
+  - Accent: #796FFC
+  - Messages: #2F1D77
