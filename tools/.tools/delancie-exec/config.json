@@ -2,7 +2,7 @@
     "delancie": {
         "us1.prod": {
             "insights": {
-                "context": "plain2.us1.prod.dog",
+                "context": "psyduck.us1.prod.dog",
                 "namespace": "delancie"
             }
         },

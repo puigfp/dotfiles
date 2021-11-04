@@ -119,6 +119,10 @@ source $HOME/.gitlabrc
 # use java 8 for dd-analytics
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
+
+# Add dda-cli to the PATH
+export PATH=$PATH:${DATADOG_ROOT}/data-eng-tools/bin
+
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
@@ -140,24 +144,7 @@ alias aws-us1-fed="aws --profile govcloud-us1-fed-human-engineering"
 alias aws-govcloud-login="saml2aws login -a govcloud-us1-fed-human-engineering"
 
 # k8s aliases
-exe() {
-  echo "$@"
-  eval "$@"
-}
-
-delancie-exec() {
-  datacenter=$1
-  flavor=$2
-  command=$3
-  command="bash -c \"(while true ; do echo -ne '\\000' ; sleep 30 ; done ) & $command\""
-
-  conf=$(jq ".[\"delancie\"][\"$1\"][\"$2\"]" $HOME/.zshvalues.json)
-  context=$(jq -r .context <<< $conf)
-  namespace=$(jq -r .namespace <<< $conf)
-
-  pod=$(kubectl get pods --context $context --namespace $namespace --field-selector=status.phase=Running -l app=worker,service=delancie-insights --sort-by=.metadata.creationTimestamp --output=json | jq -r ".items[-1].metadata.name" )
-  exe kubectl exec --context $context --namespace $namespace -it -c delancie-worker $pod -- $(echo $command)
-}
+alias delancie-exec="/Users/francisco.puig/.pyenv/versions/3.9.7/envs/delancie-exec/bin/python /Users/francisco.puig/dev/dotfiles/tools/.tools/delancie-exec/main.py"
 
 elasticsearch-port-forward() {
   context=$1
