@@ -69,6 +69,7 @@ cask "drawio"
 cask "istat-menus"
 cask "postman"
 cask "monitorcontrol"
+cask "netnewswire"
 
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
