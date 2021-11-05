@@ -80,7 +80,8 @@ brew "datadog/tap/kubectl-analyse"
 brew "datadog/tap/kubectl-iscale"
 brew "datadog/tap/kubectl-multiexec"
 brew "datadog/tap/kubectl-template"
-brew "datadog/tap/ddtool"
+cask "datadog/tap/ddtool"
+brew "unison" # nbt dependency
 
 tap "homebrew/cask-versions"
 cask "homebrew/cask-versions/adoptopenjdk8"
