@@ -4,6 +4,10 @@
             "insights": {
                 "context": "psyduck.us1.prod.dog",
                 "namespace": "delancie"
+            },
+            "correlations": {
+                "context": "plain2.us1.prod.dog",
+                "namespace": "delancie"
             }
         },
         "us1.staging": {
@@ -25,6 +29,12 @@
         "us3.prod": {
             "insights": {
                 "context": "plain4.us3.prod.dog",
+                "namespace": "delancie"
+            }
+        },
+        "us5.prod": {
+            "insights": {
+                "context": "nidoking.us5.prod.dog",
                 "namespace": "delancie"
             }
         },

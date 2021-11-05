@@ -1,4 +1,5 @@
 import json
+import os.path
 import subprocess
 
 import click
@@ -9,21 +10,23 @@ import click
 @click.option("--flavor")
 @click.option("--command")
 def delancie_exec(datacenter, flavor, command):
-    with open("config.json", "rb") as f:
+    with open("{}/config.json".format(os.path.dirname(os.path.abspath(__file__))), "rb") as f:
         config = json.load(f)
     config = config["delancie"][datacenter][flavor]
+    context = config["context"]
+    namespace = config["namespace"]
     c = [
         "kubectl",
         "get",
         "pods",
         "--context",
-        config["context"],
+        context,
         "--namespace",
-        config["namespace"],
+        namespace,
         "--field-selector",
         "status.phase=Running",
         "-l",
-        "app=worker,service=delancie-insights",
+        "app=worker,service=delancie-{}".format(flavor),
         "--sort-by",
         ".metadata.creationTimestamp",
         "--output",
@@ -38,9 +41,9 @@ def delancie_exec(datacenter, flavor, command):
         "kubectl",
         "exec",
         "--context",
-        config["context"],
+        context,
         "--namespace",
-        config["namespace"],
+        namespace,
         "-it",
         "-c",
         "delancie-worker",
