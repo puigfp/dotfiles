@@ -3,3 +3,6 @@
 	name = Francisco-Pierre Puig
 [core]
 	excludesfile = /Users/francisco/.gitignore
+
+[fetch]
+	prune = true
