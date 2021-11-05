@@ -23,6 +23,7 @@ brew "python"
 brew "openblas" # https://github.com/numpy/numpy/issues/17784#issuecomment-729950525
 brew "pyenv"
 brew "pyenv-virtualenv"
+brew "zlib" # pyenv dependency
 brew "pipenv"
 brew "node"
 brew "npm"
@@ -39,8 +40,8 @@ brew "lz4"
 brew "tree"
 brew "geckodriver"
 brew "wget"
-brew "ffmpeg"
 brew "youtube-dl"
+brew "ffmpeg"
 brew "exiftool"
 
 tap "homebrew/cask"
