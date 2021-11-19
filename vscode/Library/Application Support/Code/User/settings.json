@@ -26,11 +26,10 @@
         "editor.rulers": [ 80 ],
         "editor.formatOnSave": true
     },
-    "rust-client.rustupPath": "/Users/francisco/.cargo/bin/rustup",
-    "rust.rustfmt_path": "/Users/francisco/.cargo/bin/rustfmt",
 
     "[javascript]": {
         "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
 
     "[typescript]": {
@@ -48,8 +47,6 @@
 
     "latex-workshop.view.pdf.viewer": "tab",
 
-    "cSpell.userWords": [],
-
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
@@ -60,5 +57,15 @@
         "ms-python.vscode-pylance",
         "streetsidesoftware.code-spell-checker",
         "zxh404.vscode-proto3"
-    ]
+    ],
+
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+
+    "rust-analyzer.checkOnSave.command": "clippy"
 }
