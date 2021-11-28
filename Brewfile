@@ -38,6 +38,9 @@ brew "tree"
 brew "wget"
 brew "youtube-dl"
 brew "ffmpeg"
+brew "exiftool"
+brew "gzip"
+brew "unzip"
 
 tap "homebrew/cask"
 cask "google-chrome"
@@ -121,3 +124,6 @@ cask "vagrant"
 
 tap "versent/homebrew-taps"
 brew "saml2aws"
+
+tap "railwaycat/emacsmacport"
+brew "emacs-mac"

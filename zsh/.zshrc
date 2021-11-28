@@ -56,6 +56,9 @@ fi
 export CLICOLOR=1
 export TERM=xterm-256color
 
+# emacs
+export PATH="$HOME/.emacs.d/bin:$PATH"
+
 # neovim
 export EDITOR="nvim"
 alias vim=nvim
@@ -79,8 +82,7 @@ eval "$(pyenv init -)"
 
 # Brew
 brew-upgrade-all() {
-  brew upgrade
-  brew cask upgrade --greedy # --greedy forces all GUI apps to update
+  brew upgrade --greddy # --greedy forces all GUI apps to update
 }
 
 # -------

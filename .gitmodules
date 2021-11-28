@@ -16,3 +16,6 @@
 [submodule "vim/.config/nvim/vim-plug"]
 	path = vim/.config/nvim/vim-plug
 	url = git@github.com:junegunn/vim-plug.git
+[submodule "emacs/.emacs.d"]
+	path = emacs/.emacs.d
+	url = https://github.com/hlissner/doom-emacs
