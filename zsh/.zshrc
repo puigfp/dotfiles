@@ -58,9 +58,10 @@ export TERM=xterm-256color
 
 # emacs
 export PATH="$HOME/.emacs.d/bin:$PATH"
+export EDITOR="emacsclient -nw"
+export VISUAL=$EDITOR
 
 # neovim
-export EDITOR="nvim"
 alias vim=nvim
 
 # Go
