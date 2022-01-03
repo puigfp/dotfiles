@@ -45,6 +45,8 @@ brew "ffmpeg"
 brew "exiftool"
 brew "gzip"
 brew "unzip"
+brew "imagemagick" # required by emacs
+brew "ledger"
 
 tap "homebrew/cask"
 cask "google-chrome"
