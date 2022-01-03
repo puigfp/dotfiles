@@ -21,4 +21,4 @@
 ;; euro symbol macro
 (fset 'euro
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([24 56 return 35 120 50 48 65 67 return] 0 "%d")) arg)))
-(global-set-key "\M-#" 'euro)
+(global-set-key "\M-@" 'euro)
