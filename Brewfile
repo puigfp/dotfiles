@@ -1,3 +1,4 @@
+# general
 brew "coreutils"
 brew "gnu-sed"
 brew "gnu-tar"
@@ -46,8 +47,8 @@ brew "ffmpeg"
 brew "exiftool"
 brew "gzip"
 brew "unzip"
-brew "imagemagick" # required by emacs
 
+# ledger
 brew "ledger"
 brew "hledger"
 
@@ -90,12 +91,11 @@ cask "font-cascadia"
 tap "homebrew/cask-drivers"
 cask "logitech-options"
 
-tap "bazelbuild/tap"
-brew "bazel"
-
 tap "heroku/brew"
 brew "heroku"
 brew "heroku-node"  # heroku dependency, not properly resolved by brew bundle
 
+# emacs
 tap "railwaycat/emacsmacport"
 brew "emacs-mac"
+brew "imagemagick" # required by emacs
