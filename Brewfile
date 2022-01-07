@@ -30,7 +30,7 @@ brew "wget"
 
 # emacs
 tap "railwaycat/emacsmacport"
-brew "emacs-mac"
+brew "railwaycat/emacsmacport/emacs-mac"
 brew "imagemagick" # required by emacs
 
 # ledger
