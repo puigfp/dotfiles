@@ -40,6 +40,12 @@
   brew bundle cleanup --force
   ```
 
+- figure where a package is in the dependency tree
+
+  ```sh
+  brew deps --tree --installed | less
+  ```
+
 ### zsh
 
 - add brew-installed zsh to standard shells:
