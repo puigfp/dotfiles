@@ -14,6 +14,13 @@ brew "zsh"
 brew "ripgrep"
 brew "the_silver_searcher"
 
+# random cli utils
+brew "htop"
+brew "ncdu"
+brew "loc"
+brew "tree"
+brew "jq"
+
 # compression
 brew "gzip"
 brew "unzip"
@@ -45,25 +52,24 @@ brew "pyenv-virtualenv"
 brew "zlib" # pyenv dependency
 brew "pipenv"
 
+# node
+brew "node"
+brew "npm"
+
+# go
+brew "go"
+brew "gimme"
+
 brew "stow"
 brew "tmux"
 brew "fzf"
-brew "jq"
 brew "neovim"
-brew "htop"
-brew "ncdu"
-brew "go"
-brew "gimme"
-brew "node"
-brew "npm"
 brew "rustup"
 brew "java"
-brew "loc"
 brew "cmatrix"
 brew "pandoc"
 brew "tldr"
 brew "qcachegrind"
-brew "tree"
 brew "youtube-dl"
 brew "ffmpeg"
 brew "exiftool"
