@@ -23,7 +23,19 @@ brew "unrar"
 brew "git"
 brew "tig"
 
+# curl or similar
 brew "curl"
+brew "wget"
+
+# emacs
+tap "railwaycat/emacsmacport"
+brew "emacs-mac"
+brew "imagemagick" # required by emacs
+
+# ledger
+brew "ledger"
+brew "hledger"
+
 brew "stow"
 brew "tmux"
 brew "fzf"
@@ -52,14 +64,9 @@ brew "qcachegrind"
 brew "lz4"
 brew "tree"
 brew "geckodriver"
-brew "wget"
 brew "youtube-dl"
 brew "ffmpeg"
 brew "exiftool"
-
-# ledger
-brew "ledger"
-brew "hledger"
 
 tap "homebrew/cask"
 cask "google-chrome"
@@ -102,8 +109,3 @@ cask "logitech-options"
 tap "heroku/brew"
 brew "heroku"
 brew "heroku-node"  # heroku dependency, not properly resolved by brew bundle
-
-# emacs
-tap "railwaycat/emacsmacport"
-brew "emacs-mac"
-brew "imagemagick" # required by emacs
