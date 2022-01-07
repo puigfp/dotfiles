@@ -1,3 +1,4 @@
+# general
 brew "coreutils"
 brew "gnu-sed"
 brew "gnu-tar"
@@ -42,8 +43,8 @@ brew "ffmpeg"
 brew "exiftool"
 brew "gzip"
 brew "unzip"
-brew "imagemagick" # required by emacs
 
+# ledger
 brew "ledger"
 brew "hledger"
 
@@ -76,7 +77,16 @@ cask "font-cascadia"
 tap "homebrew/cask-drivers"
 cask "logitech-options"
 
+# emacs
+tap "railwaycat/emacsmacport"
+brew "railwaycat/emacsmacport/emacs-mac"
+brew "imagemagick" # required to show inline images (I think)
+
+# -------
 # datadog
+# -------
+
+# general tooling
 tap "datadog/tap", "git@github.com:DataDog/homebrew-tap.git"
 brew "datadog/tap/python@2"
 brew "datadog/tap/latest-image"
@@ -91,6 +101,7 @@ brew "datadog/tap/kubectl-template"
 cask "datadog/tap/ddtool"
 brew "unison" # nbt dependency
 
+# scala/mortar
 tap "homebrew/cask-versions"
 cask "homebrew/cask-versions/adoptopenjdk8"
 brew "scala211"
@@ -121,14 +132,15 @@ brew "rbenv"
 brew "black"
 cask "aws-vault"
 
+# agenda
+brew "just"
+
+# web-ui
 brew "yarn"
 brew "nodenv"
 
+# dogbox
 cask "virtualbox"
 cask "vagrant"
 
-tap "versent/homebrew-taps"
 brew "saml2aws"
-
-tap "railwaycat/emacsmacport"
-brew "emacs-mac"
