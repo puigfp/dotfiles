@@ -44,6 +44,10 @@ brew "imagemagick" # required by emacs
 brew "ledger"
 brew "hledger"
 
+# video encoding
+cask "handbrake"
+brew "ffmpeg"
+
 # python
 brew "python"
 brew "openblas" # https://github.com/numpy/numpy/issues/17784#issuecomment-729950525
@@ -73,7 +77,6 @@ brew "sshuttle"
 brew "qcachegrind"
 brew "geckodriver"
 brew "youtube-dl"
-brew "ffmpeg"
 brew "exiftool"
 
 tap "homebrew/cask"
