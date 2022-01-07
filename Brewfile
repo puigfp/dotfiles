@@ -18,6 +18,7 @@ brew "the_silver_searcher"
 brew "gzip"
 brew "unzip"
 brew "unrar"
+brew "lz4"
 
 # git
 brew "git"
@@ -36,6 +37,14 @@ brew "imagemagick" # required by emacs
 brew "ledger"
 brew "hledger"
 
+# python
+brew "python"
+brew "openblas" # https://github.com/numpy/numpy/issues/17784#issuecomment-729950525
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "zlib" # pyenv dependency
+brew "pipenv"
+
 brew "stow"
 brew "tmux"
 brew "fzf"
@@ -45,12 +54,6 @@ brew "htop"
 brew "ncdu"
 brew "go"
 brew "gimme"
-brew "python"
-brew "openblas" # https://github.com/numpy/numpy/issues/17784#issuecomment-729950525
-brew "pyenv"
-brew "pyenv-virtualenv"
-brew "zlib" # pyenv dependency
-brew "pipenv"
 brew "node"
 brew "npm"
 brew "rustup"
