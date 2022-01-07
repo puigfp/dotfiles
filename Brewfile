@@ -96,12 +96,6 @@ cask "font-cascadia"
 tap "homebrew/cask-drivers"
 cask "logitech-options"
 
-<<<<<<< HEAD
-# emacs
-tap "railwaycat/emacsmacport"
-brew "railwaycat/emacsmacport/emacs-mac"
-brew "imagemagick" # required to show inline images (I think)
-
 # -------
 # datadog
 # -------
@@ -164,8 +158,3 @@ cask "virtualbox"
 cask "vagrant"
 
 brew "saml2aws"
-=======
-tap "heroku/brew"
-brew "heroku"
-brew "heroku-node"  # heroku dependency, not properly resolved by brew bundle
->>>>>>> master
