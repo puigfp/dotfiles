@@ -1,24 +1,36 @@
-# general
+# coreutils
 brew "coreutils"
 brew "gnu-sed"
 brew "gnu-tar"
 brew "grep"
-brew "ripgrep"
 brew "watch"
 brew "findutils"
-brew "curl"
-brew "the_silver_searcher"
-brew "stow"
-brew "git"
+
+# shells
 brew "bash"
 brew "zsh"
+
+# search
+brew "ripgrep"
+brew "the_silver_searcher"
+
+# compression
+brew "gzip"
+brew "unzip"
+brew "unrar"
+
+# git
+brew "git"
+brew "tig"
+
+brew "curl"
+brew "stow"
 brew "tmux"
 brew "fzf"
 brew "jq"
 brew "neovim"
 brew "htop"
 brew "ncdu"
-brew "tig"
 brew "go"
 brew "gimme"
 brew "python"
@@ -35,7 +47,6 @@ brew "loc"
 brew "cmatrix"
 brew "pandoc"
 brew "tldr"
-brew "unrar"
 brew "sshuttle"
 brew "qcachegrind"
 brew "lz4"
@@ -45,8 +56,6 @@ brew "wget"
 brew "youtube-dl"
 brew "ffmpeg"
 brew "exiftool"
-brew "gzip"
-brew "unzip"
 
 # ledger
 brew "ledger"
@@ -54,7 +63,6 @@ brew "hledger"
 
 tap "homebrew/cask"
 cask "google-chrome"
-cask "brave-browser"
 cask "firefox"
 cask "tor-browser"
 cask "iterm2"
