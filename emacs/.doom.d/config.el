@@ -55,4 +55,4 @@
 ;; org-capture templates
 (setq org-capture-templates
       '(("l" "Link" entry (file "~/dev/stuff/links.org")
-         "* %(org-cliplink-capture)\n:PROPERTIES:\n:Timestamp: %U\n:END: ?" :empty-lines 1 :prepend t)))
+         "* %(org-cliplink-capture)\n%U%?" :empty-lines 1 :prepend t)))
