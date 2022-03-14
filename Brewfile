@@ -80,6 +80,7 @@ brew "exiftool"
 tap "homebrew/cask"
 cask "google-chrome"
 cask "firefox"
+cask "finicky"
 cask "iterm2"
 cask "spotify"
 cask "visual-studio-code"
@@ -123,6 +124,7 @@ brew "datadog/tap/kubectl-multiexec"
 brew "datadog/tap/kubectl-template"
 cask "datadog/tap/ddtool"
 brew "unison" # nbt dependency
+brew "datadog/tap/agenda"
 
 # scala/mortar
 tap "homebrew/cask-versions"
