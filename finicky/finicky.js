@@ -5,9 +5,14 @@ const GoogleIdp = {
 }
 
 // Google Chrome profiles:
+//
 // - "Profile 1": Perso
 // - "Default": DD
 // - "Profile 2": Govcloud
+//
+// To figure out which profile is which:
+//
+// open -n /Applications/Google\ Chrome.app --args --profile-directory="Default" google.fr
 
 const Chrome = (openInBackground = false) => ({
   name: 'Google Chrome',
@@ -25,7 +30,7 @@ const DdGovChrome = (openInBackground = false) => ({
 })
 
 module.exports = {
-  defaultBrowser: Chrome,
+  defaultBrowser: "Google Chrome",
   options: {
     logRequests: true,
   },
