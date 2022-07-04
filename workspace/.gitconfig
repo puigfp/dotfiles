@@ -1,0 +1,12 @@
+[user]
+	email = francisco.puig@datadoghq.com
+	name = Francisco Puig
+
+[branch]
+	sort = -committerdate
+
+[fetch]
+	prune = true
+
+[pull]
+	ff = only
