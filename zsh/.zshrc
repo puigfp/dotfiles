@@ -32,19 +32,37 @@ plugins=(
 HISTSIZE=10000000
 SAVEHIST=10000000
 
+is_mac() {
+  if [[ "$(uname)" == "Darwin" ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+is_workspace() {
+  if [[ "$(uname)" == "Linux" ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
 # make Homebrew's completions available
 # please see https://docs.brew.sh/Shell-Completion
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+if is_mac; then
+  if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-  autoload -Uz compinit
-  compinit
+    autoload -Uz compinit
+    compinit
+  fi
 fi
 
 source $ZSH/oh-my-zsh.sh
 
 # macOS: add GNU commands and brew-installed binaries to path
-if [[ "$(uname)" == "Darwin" ]]; then
+if is_mac; then
   export PATH="/usr/local/bin:$PATH";
   export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"; # gnu stuff
   export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"; # grep
@@ -57,9 +75,9 @@ export CLICOLOR=1
 export TERM=xterm-256color
 
 # emacs
-export PATH="$HOME/.emacs.d/bin:$PATH"
-# export EDITOR="$HOME/emacsclient"
-# export VISUAL=$EDITOR
+if is_mac; then
+  export PATH="$HOME/.emacs.d/bin:$PATH"
+fi
 
 # neovim
 alias vim=nvim
@@ -71,109 +89,142 @@ export GOPATH="${HOME?}/go"
 export PATH="${GOPATH}/bin:${PATH}"
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
+if is_mac; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
 
 # LateX
 # for some reasons, path_helper doesn't pick up /etc/paths.d/TeX
-export PATH="/Library/TeX/texbin:$PATH"
+if is_mac; then
+  export PATH="/Library/TeX/texbin:$PATH"
+fi
 
 # Python
-# export PIPENV_VENV_IN_PROJECT="enabled"
-# export PIP_REQUIRE_VIRTUALENV=true
-# export PATH="$HOME/.poetry/bin:$PATH"
-eval "$(pyenv init -)"
+if is_mac; then
+  eval "$(pyenv init -)"
+fi
+# pipx
+export PATH="${HOME}/.local/bin:${PATH}$"
 
 # Brew
-brew-upgrade-all() {
-  brew upgrade --greddy # --greedy forces all GUI apps to update
-}
+if is_mac; then
+  brew-upgrade-all() {
+    brew upgrade --greddy # --greedy forces all GUI apps to update
+  }
+fi
 
 # -------
 # Datadog
 # -------
 
 # Force certain more-secure behaviours from homebrew
-export HOMEBREW_NO_INSECURE_REDIRECT=1
-export HOMEBREW_CASK_OPTS=--require-sha
+if is_mac; then
+  export HOMEBREW_NO_INSECURE_REDIRECT=1
+  export HOMEBREW_CASK_OPTS=--require-sha
+fi
 
 # Load ruby shims
-eval "$(rbenv init -)"
+if is_mac; then
+  eval "$(rbenv init -)"
+fi
 
 # Add AWS CLI to PATH
-export PATH="/usr/local/opt/awscli@1/bin:$PATH"
+if is_mac; then
+  export PATH="/usr/local/opt/awscli@1/bin:$PATH"
+fi
+
+# store key in the login keychain instead of aws-vault managing a hidden keychain
+if is_mac; then
+  export AWS_VAULT_KEYCHAIN_NAME=login
+fi
+
+# tweak session times so you don't have to re-enter passwords every 5min
+if is_mac; then
+  export AWS_SESSION_TTL=24h
+  export AWS_ASSUME_ROLE_TTL=1h
+fi
 
 # Add datadog devtools binaries to the PATH
-export PATH="${HOME?}/dd/devtools/bin:${PATH?}"
+if is_mac; then
+  export PATH="${HOME?}/dd/devtools/bin:${PATH?}"
+fi
 
 # Point DATADOG_ROOT to ~/dd symlink
 export DATADOG_ROOT="${HOME?}/dd"
 
 # Tell the devenv vm to mount $GOPATH/src rather than just dd-go
-export MOUNT_ALL_GO_SRC=1
-
-# store key in the login keychain instead of aws-vault managing a hidden keychain
-export AWS_VAULT_KEYCHAIN_NAME=login
-
-# tweak session times so you don't have to re-enter passwords every 5min
-export AWS_SESSION_TTL=24h
-export AWS_ASSUME_ROLE_TTL=1h
+if is_mac; then
+  export MOUNT_ALL_GO_SRC=1
+fi
 
 # create GITLAB_TOKEN env var
 source $HOME/.gitlabrc
 
 # use java 8 for dd-analytics
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+if is_mac; then
+  export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+fi
 
 
 # Add dda-cli to the PATH
-export PATH=$PATH:${DATADOG_ROOT}/data-eng-tools/bin
+if is_mac; then
+  export PATH=$PATH:${DATADOG_ROOT}/data-eng-tools/bin
+fi
 
-export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
-export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
-
-# black
-alias black="/Users/francisco.puig/.pyenv/versions/3.8.5/envs/black/bin/black"
-
-# isort
-alias isort="/Users/francisco.puig/.pyenv/versions/3.8.5/envs/isort/bin/isort"
+if is_mac; then
+  export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+  export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+fi
 
 # init nodenv
-eval "$(nodenv init -)"
-export NODE_OPTIONS="--max-old-space-size=8192"
+if is_mac; then
+  eval "$(nodenv init -)"
+  export NODE_OPTIONS="--max-old-space-size=8192"
+fi
 
 # aws aliases
-alias aws-us1-staging="aws-vault exec staging-engineering -- aws s3"
-alias aws-us1-prod="aws-vault exec prod-engineering -- aws"
-alias aws-us1-fed="aws --profile govcloud-us1-fed-human-engineering"
+if is_mac; then
+  alias aws-us1-staging="aws-vault exec staging-engineering -- aws s3"
+  alias aws-us1-prod="aws-vault exec prod-engineering -- aws"
+  alias aws-us1-fed="aws --profile govcloud-us1-fed-human-engineering"
 
-alias aws-govcloud-login="saml2aws login -a govcloud-us1-fed-human-engineering"
+  alias aws-govcloud-login="saml2aws login -a govcloud-us1-fed-human-engineering"
+fi
+
 
 # k8s aliases
-alias delancie-exec="/Users/francisco.puig/.pyenv/versions/3.9.7/envs/delancie-exec/bin/python /Users/francisco.puig/dev/dotfiles/tools/.tools/delancie-exec/main.py"
+if is_mac; then
+  alias delancie-exec="/Users/francisco.puig/.pyenv/versions/3.9.7/envs/delancie-exec/bin/python /Users/francisco.puig/dev/dotfiles/tools/.tools/delancie-exec/main.py"
+fi
 
-elasticsearch-port-forward() {
-  context=$1
-  namespace=$2
-  pod=$(kubectl get pods --context $context --namespace $namespace --field-selector=status.phase=Running -l cluster=watchdog,elasticsearch-role=client --output=json | jq -r ".items[-1].metadata.name" )
-  kubectl --context $context port-forward $pod 9200
-}
-
-alias elasticsearch-port-forward-us1-staging='elasticsearch-port-forward chinook.us1.staging.dog watchdog'
-alias elasticsearch-port-forward-us1-prod='elasticsearch-port-forward general1.us1.prod.dog watchdog'
+if is_mac; then
+  elasticsearch-port-forward() {
+    context=$1
+    namespace=$2
+    pod=$(kubectl get pods --context $context --namespace $namespace --field-selector=status.phase=Running -l cluster=watchdog,elasticsearch-role=client --output=json | jq -r ".items[-1].metadata.name" )
+    kubectl --context $context port-forward $pod 9200
+  }
+  alias elasticsearch-port-forward-us1-staging='elasticsearch-port-forward chinook.us1.staging.dog watchdog'
+  alias elasticsearch-port-forward-us1-prod='elasticsearch-port-forward general1.us1.prod.dog watchdog'
+fi
 
 # vault aliases
 # usage: vault-login us1.prod
-vault-login() {
-  export VAULT_ADDR=https://vault.$1.dog
-  export VAULT_TOKEN=$(vault login -method oidc -token-only)
-}
+if is_mac; then
+  vault-login() {
+    export VAULT_ADDR=https://vault.$1.dog
+    export VAULT_TOKEN=$(vault login -method oidc -token-only)
+  }
+fi
 
 # appgate aliases
-GOVCLOUD_APPGATE_URL="appgate://sdp.fed.d.dog/eyJzcGEiOnsibW9kZSI6IlRDUCIsIm5hbWUiOiJkZWZhdWx0Iiwia2V5IjoiMGI4NDMyZTEyYWQ5Yzk1YjY4ZDRlOTAwM2YzMDFkMmMxYTJkN2NlY2E5ZjhmZDM5MDQxOTljMjgwN2MyNjczNCJ9LCJjYUZpbmdlcnByaW50IjoiYzQ2YjA3NGU4OGJmNTk2MzlmNGVjMDFiMTIwNDE2ZjcyNTExYzM1ZmQ0YmY5M2M2Y2I3NDIyNDVjNmM2MzEwYyIsImlkZW50aXR5UHJvdmlkZXJOYW1lIjoiZ29vZ2xlIn0="
-DATADOG_APPGATE_URL="appgate://appgate.datadoghq.com/eyJjYUZpbmdlcnByaW50IjoiN2MxMTEwNWZkNzAzNWYzMjE5NTdiYjdhZDQ0ZTIwZjc0YTZkZTNiYWM3ZWIzZTkzNWJmNjAzMDAzOTI4NmYwYyIsImlkZW50aXR5UHJvdmlkZXJOYW1lIjoiTG9naW4gV2l0aCBHb29nbGUifQ=="
+if is_mac; then
+  GOVCLOUD_APPGATE_URL="appgate://sdp.fed.d.dog/eyJzcGEiOnsibW9kZSI6IlRDUCIsIm5hbWUiOiJkZWZhdWx0Iiwia2V5IjoiMGI4NDMyZTEyYWQ5Yzk1YjY4ZDRlOTAwM2YzMDFkMmMxYTJkN2NlY2E5ZjhmZDM5MDQxOTljMjgwN2MyNjczNCJ9LCJjYUZpbmdlcnByaW50IjoiYzQ2YjA3NGU4OGJmNTk2MzlmNGVjMDFiMTIwNDE2ZjcyNTExYzM1ZmQ0YmY5M2M2Y2I3NDIyNDVjNmM2MzEwYyIsImlkZW50aXR5UHJvdmlkZXJOYW1lIjoiZ29vZ2xlIn0="
+  DATADOG_APPGATE_URL="appgate://appgate.datadoghq.com/eyJjYUZpbmdlcnByaW50IjoiN2MxMTEwNWZkNzAzNWYzMjE5NTdiYjdhZDQ0ZTIwZjc0YTZkZTNiYWM3ZWIzZTkzNWJmNjAzMDAzOTI4NmYwYyIsImlkZW50aXR5UHJvdmlkZXJOYW1lIjoiTG9naW4gV2l0aCBHb29nbGUifQ=="
 
-alias appgate-fed="killall -9 'AppGate SDP' || true && open $GOVCLOUD_APPGATE_URL"
-alias appgate-dd="killall -9 'AppGate SDP' || true && open $DATADOG_APPGATE_URL"
+  alias appgate-fed="killall -9 'AppGate SDP' || true && open $GOVCLOUD_APPGATE_URL"
+  alias appgate-dd="killall -9 'AppGate SDP' || true && open $DATADOG_APPGATE_URL"
+fi
 
 # this is working on zsh, I haven't tested it in other shells
 function _update_stubs {
@@ -200,8 +251,14 @@ function update_dogweb_stubs {
     cd -
 }
 
-# dstools
-alias dst='/Users/francisco.puig/.pyenv/versions/3.8.5/envs/dstools/bin/python -m dstools'
+if is_mac; then
+  export PATH=$PATH:$HOME/dd/experimental/teams/metrics-query
+fi
+
+if is_workspace; then
+  alias py2="source venv2/bin/activate"
+  alias py3="source venv3/bin/activate"
+fi
 
 # ------------
 # powerline10k
