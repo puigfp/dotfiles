@@ -55,6 +55,7 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 brew "zlib" # pyenv dependency
 brew "pipenv"
+brew "pipx"
 
 # node
 brew "node"
@@ -125,12 +126,16 @@ brew "datadog/tap/kubectl-template"
 cask "datadog/tap/ddtool"
 brew "unison" # nbt dependency
 brew "datadog/tap/agenda"
+brew "datadog/tap/datadog-workspaces"
+brew "datadog/tap/devkube"
+cask "tilt"
 
 # temporal cli
 brew "tctl"
-brew "tctl-local-auth"
-brew "tctl-data-converter"
-brew "tctx"
+cask "tctl-local-auth"
+cask "tctl-data-converter"
+cask "tctx"
+cask "tilt-functions"
 
 # scala/mortar
 tap "homebrew/cask-versions"
