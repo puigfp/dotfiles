@@ -17,7 +17,8 @@
 
     "[python]": {
         "editor.rulers": [ 120 ], // black max line length
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.python"
     },
     "python.languageServer": "Pylance",
     "python.formatting.provider": "black",
@@ -39,7 +40,8 @@
     "[markdown]": {
         "editor.tabSize": 2,
         "editor.wordWrap": "on",
-        "files.trimTrailingWhitespace": false
+        "files.trimTrailingWhitespace": false,
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
 
     "go.useLanguageServer": false,
@@ -67,5 +69,15 @@
         "jupyter-notebook": "left"
     },
 
-    "rust-analyzer.checkOnSave.command": "clippy"
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "rust-analyzer.rustfmt.extraArgs": [
+        "+nightly"
+    ],
+
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ]
 }
