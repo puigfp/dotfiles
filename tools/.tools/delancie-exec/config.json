@@ -6,7 +6,7 @@
                 "namespace": "delancie"
             },
             "correlations": {
-                "context": "plain2.us1.prod.dog",
+                "context": "psyduck.us1.prod.dog",
                 "namespace": "delancie"
             }
         },
@@ -22,8 +22,8 @@
         },
         "eu1.prod": {
             "insights": {
-                "context": "app3.eu1.prod.dog",
-                "namespace": "datadog"
+                "context": "babar.eu1.prod.dog",
+                "namespace": "delancie"
             }
         },
         "us3.prod": {
