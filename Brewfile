@@ -126,6 +126,12 @@ cask "datadog/tap/ddtool"
 brew "unison" # nbt dependency
 brew "datadog/tap/agenda"
 
+# temporal cli
+brew "tctl"
+brew "tctl-local-auth"
+brew "tctl-data-converter"
+brew "tctx"
+
 # scala/mortar
 tap "homebrew/cask-versions"
 cask "homebrew/cask-versions/adoptopenjdk8"
