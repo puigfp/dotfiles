@@ -1,0 +1,13 @@
+{
+    "include": [
+        "dd/watchdog/**",
+        "dd/ds/**",
+        "delancie/tasks/**",
+        "datalayer/metrics/**",
+        "prozess/signal_bundler/**"
+    ],
+    "exclude": [
+        "**/__pycache__",
+        ".pytest_cache"
+    ]
+}
