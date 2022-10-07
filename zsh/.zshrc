@@ -53,6 +53,11 @@ is_workspace() {
 # make Homebrew's completions available
 # please see https://docs.brew.sh/Shell-Completion
 if is_mac; then
+  # TODO: new homebrew stuff for M1 macs only
+  echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /Users/francisco.puig/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/francisco.puig/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  # end
   if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
