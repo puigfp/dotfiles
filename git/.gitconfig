@@ -1,11 +1,13 @@
 [core]
 	excludesfile = /Users/francisco/.gitignore
-[branch]
-	sort = -committerdate
+	hooksPath = /usr/local/dd/global_hooks
 
 [user]
 	email = francisco.puig@datadoghq.com
 	name = Francisco Puig
+
+[branch]
+	sort = -committerdate
 
 [fetch]
 	prune = true
@@ -18,3 +20,6 @@
 
 [includeIf "gitdir:~/dev/"]
 	path = ~/.gitconfig-personal
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
