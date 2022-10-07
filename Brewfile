@@ -24,7 +24,6 @@ brew "jq"
 # compression
 brew "gzip"
 brew "unzip"
-brew "unrar"
 brew "lz4"
 
 # git
@@ -102,7 +101,6 @@ cask "netnewswire"
 
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
-cask "font-cascadia"
 
 tap "homebrew/cask-drivers"
 cask "logitech-options"
@@ -126,7 +124,7 @@ brew "datadog/tap/kubectl-template"
 cask "datadog/tap/ddtool"
 brew "unison" # nbt dependency
 brew "datadog/tap/agenda"
-brew "datadog/tap/datadog-workspaces"
+cask "datadog/tap/datadog-workspaces"
 brew "datadog/tap/devkube"
 cask "tilt"
 
@@ -140,14 +138,14 @@ cask "tilt-functions"
 # scala/mortar
 tap "homebrew/cask-versions"
 cask "homebrew/cask-versions/adoptopenjdk8"
-brew "scala211"
+# brew "scala211"
 brew "sbt"
 
-tap "datadog/data-eng-tools", "git@github.com:DataDog/data-eng-tools.git"
-brew "data-eng-tools"
+# tap "datadog/data-eng-tools", "git@github.com:DataDog/data-eng-tools.git"
+# brew "data-eng-tools"
 
 brew "mysql"
-brew "postgresql@9.6"
+# brew "postgresql@9.6"
 brew "openssl"
 
 brew "gnupg"
@@ -176,7 +174,7 @@ brew "yarn"
 brew "nodenv"
 
 # dogbox
-cask "virtualbox"
-cask "vagrant"
+# cask "virtualbox"
+# cask "vagrant"
 
 brew "saml2aws"
