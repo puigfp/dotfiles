@@ -8,6 +8,10 @@
             "correlations": {
                 "context": "psyduck.us1.prod.dog",
                 "namespace": "delancie"
+            },
+            "ds-experiments": {
+                "context": "psyduck.us1.prod.dog",
+                "namespace": "delancie"
             }
         },
         "us1.staging": {

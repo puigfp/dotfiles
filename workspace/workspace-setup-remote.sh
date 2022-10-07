@@ -2,7 +2,7 @@
 
 # install random packages
 sudo apt update
-sudo apt install htop pipx python3.8-venv neovim fzf
+sudo apt install htop pipx python3.8-venv neovim fzf rsync
 
 # install isort/black in the global PATH
 pipx install isort==5.8.0

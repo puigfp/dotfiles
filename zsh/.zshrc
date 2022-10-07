@@ -7,7 +7,9 @@ fi
 
 # this was added to prevent git from trying to set the locale to "en_FR" when running
 # (the language of my system is English but the region is France)
+export LANGUAGE="en_US.UTF-8"
 export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 # zsh initialization
 ZSH="$HOME/.oh-my-zsh"
@@ -258,6 +260,8 @@ fi
 if is_workspace; then
   alias py2="source venv2/bin/activate"
   alias py3="source venv3/bin/activate"
+
+  export DOGWEB_DEFAULT_CONFIG_PATH=$DATADOG_ROOT/dogweb/workspace.ini
 fi
 
 # ------------

@@ -1,6 +1,4 @@
 {
-    "breadcrumbs.enabled": true,
-
     "editor.fontFamily": "'FiraCode-Retina', 'Fira Code', 'Cascadia Code', 'Droid Sans Mono'",
     "editor.fontSize": 13,
     "editor.fontLigatures": false,
@@ -44,7 +42,7 @@
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
 
-    "go.useLanguageServer": false,
+    "go.useLanguageServer": true,
     "go.formatTool": "goimports",
 
     "latex-workshop.view.pdf.viewer": "tab",
@@ -57,7 +55,6 @@
         "eamodio.gitlens",
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "streetsidesoftware.code-spell-checker",
         "zxh404.vscode-proto3"
     ],
 
@@ -79,5 +76,18 @@
             "before": ["j", "k"],
             "after": ["<Esc>"]
         }
-    ]
+    ],
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/__pycache__": true,
+        "**/*.pyc": true
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "excalidraw.theme": "light"
 }
