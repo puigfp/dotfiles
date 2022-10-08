@@ -71,6 +71,7 @@ source $ZSH/oh-my-zsh.sh
 # macOS: add GNU commands and brew-installed binaries to path
 if is_mac; then
   export PATH="/usr/local/bin:$PATH";
+  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH?}"
   export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"; # gnu stuff
   export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"; # grep
   export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"; # sed
@@ -94,6 +95,11 @@ export VISUAL=nvim
 # Go
 export GOPATH="${HOME?}/go"
 export PATH="${GOPATH}/bin:${PATH}"
+# Go 1.16+ sets GO111MODULE to off by default with the intention to
+# remove it in Go 1.18, which breaks projects using the dep tool.
+# https://blog.golang.org/go116-module-changes
+export GO111MODULE=auto
+export GOPRIVATE=github.com/DataDog
 
 # Rust
 if is_mac; then
@@ -128,6 +134,8 @@ fi
 if is_mac; then
   export HOMEBREW_NO_INSECURE_REDIRECT=1
   export HOMEBREW_CASK_OPTS=--require-sha
+  export HOMEBREW_DIR=/opt/homebrew
+  export HOMEBREW_BIN=/opt/homebrew/bin
 fi
 
 # Load ruby shims
@@ -149,6 +157,13 @@ fi
 if is_mac; then
   export AWS_SESSION_TTL=24h
   export AWS_ASSUME_ROLE_TTL=1h
+fi
+
+# google-cloud-sdk brew caveat
+if is_mac; then
+  source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+  rk
+  source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
 
 # Add datadog devtools binaries to the PATH
@@ -198,6 +213,9 @@ if is_mac; then
   alias aws-govcloud-login="saml2aws login -a govcloud-us1-fed-human-engineering"
 fi
 
+# Helm switch from storing objects in kubernetes configmaps to
+# secrets by default, but we still use the old default.
+export HELM_DRIVER=configmap
 
 # k8s aliases
 if is_mac; then
