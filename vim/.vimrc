@@ -18,7 +18,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " theme
-Plug 'haishanh/night-owl.vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -86,4 +86,4 @@ if (has("termguicolors"))
 endif
 
 syntax enable
-colorscheme night-owl
+colorscheme base16-tomorrow
