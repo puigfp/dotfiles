@@ -12,7 +12,7 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
 
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "Tomorrow",
     "workbench.editor.enablePreviewFromQuickOpen": false,
 
     "[python]": {
@@ -23,8 +23,14 @@
         "editor.rulers": [ 80 ],
         "editor.formatOnSave": true
     },
-    "rust-client.rustupPath": "/Users/francisco/.cargo/bin/rustup",
-    "rust.rustfmt_path": "/Users/francisco/.cargo/bin/rustfmt",
+    "rust-analyzer.checkOnSave.command": "clippy",
+
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
 
     "[javascript]": {
         "editor.tabSize": 2,
@@ -32,6 +38,7 @@
 
     "[typescript]": {
         "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
 
     "[markdown]": {
@@ -46,4 +53,5 @@
     "latex-workshop.view.pdf.viewer": "tab",
 
     "cSpell.userWords": [],
+    "redhat.telemetry.enabled": false,
 }
