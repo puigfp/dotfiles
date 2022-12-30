@@ -19,3 +19,9 @@
 [submodule "emacs/.emacs.d"]
 	path = emacs/.emacs.d
 	url = https://github.com/hlissner/doom-emacs
+[submodule "tmux/.config/tmux/powerline"]
+	path = tmux/.config/tmux/powerline
+	url = https://github.com/erikw/tmux-powerline.git
+[submodule "tmux/.config/tmux/plugins/tpm"]
+	path = tmux/.config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
