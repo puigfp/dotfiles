@@ -10,7 +10,7 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
 
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "Tomorrow",
     "workbench.editor.enablePreviewFromQuickOpen": false,
 
     "[python]": {
@@ -53,6 +53,7 @@
 
     "remote.SSH.defaultExtensions": [
         "eamodio.gitlens",
+        "golang.go",
         "ms-python.python",
         "ms-python.vscode-pylance",
         "zxh404.vscode-proto3"
@@ -89,5 +90,10 @@
         "**/*.pyc": true
     },
     "go.toolsManagement.autoUpdate": true,
-    "excalidraw.theme": "light"
+    "excalidraw.theme": "light",
+    "redhat.telemetry.enabled": false,
+    "haskell.manageHLS": "GHCup",
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
