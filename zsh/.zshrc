@@ -106,6 +106,11 @@ if is_mac; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# Haskell
+if is_mac; then
+  export PATH="$HOME/.ghcup/bin:$PATH"
+fi
+
 # LateX
 # for some reasons, path_helper doesn't pick up /etc/paths.d/TeX
 if is_mac; then
@@ -162,7 +167,6 @@ fi
 # google-cloud-sdk brew caveat
 if is_mac; then
   source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-  rk
   source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
 
@@ -180,7 +184,7 @@ if is_mac; then
 fi
 
 # create GITLAB_TOKEN env var
-source $HOME/.gitlabrc
+source $HOME/.secrets
 
 # use java 8 for dd-analytics
 if is_mac; then
@@ -219,7 +223,7 @@ export HELM_DRIVER=configmap
 
 # k8s aliases
 if is_mac; then
-  alias delancie-exec="/Users/francisco.puig/.pyenv/versions/3.9.7/envs/delancie-exec/bin/python /Users/francisco.puig/dev/dotfiles/tools/.tools/delancie-exec/main.py"
+  alias delancie-exec="/Users/francisco.puig/.pyenv/versions/3.9.9/envs/delancie-exec/bin/python /Users/francisco.puig/dev/dotfiles/tools/.tools/delancie-exec/main.py"
 fi
 
 if is_mac; then
