@@ -1,15 +1,19 @@
 #!/usr/bin/env bash
 
+WORKSPACE=workspace-francisco-puig-blue
+
 rsync -Lar \
-  ~/.zshrc ~/.p10k.zsh ~/.gitlabrc ~/.oh-my-zsh-custom \
+  ~/.zshrc ~/.p10k.zsh ~/.secrets ~/.oh-my-zsh-custom \
   ~/dev/dotfiles/workspace/.gitconfig \
   ~/.vimrc ~/.vim \
-  workspace-francisco-puig:~
+  ~/.tmux.conf \
+  $WORKSPACE:~/
 
 rsync -Lar \
     ~/.config/nvim \
-  workspace-francisco-puig:~/.config/
+    ~/.config/tmux \
+  $WORKSPACE:~/.config/
 
 rsync -Lar \
     ~/dev/dotfiles/workspace/pyrightconfig.json \
-    workspace-francisco-puig:~/dd/dogweb/
+    $WORKSPACE:~/dd/dogweb/
