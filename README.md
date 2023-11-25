@@ -125,3 +125,10 @@
 ```sh
 doom install
 ```
+
+#### when nothign works
+
+```sh
+rm -rf .emacs.d/.local/
+doom install
+```
