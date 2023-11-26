@@ -91,7 +91,7 @@
 - pull latest master of all submodules
 
   ```sh
-  git submodule foreach git pull origin master
+  git submodule foreach git pull origin HEAD
   ```
 
 ### iterm
