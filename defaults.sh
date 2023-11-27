@@ -65,8 +65,8 @@ defaults -currentHost write com.apple.Bluetooth RemoteWakeEnabled -bool false
 # Appearance
 # ----------
 
-# Set appearance to "Dark"
-defaults write "Apple Global Domain" "AppleInterfaceStyle" "Dark"
+# Set appearance to "Light"
+defaults write "Apple Global Domain" "AppleInterfaceStyle" "Light"
 
 # Set highlight color to "Purple"
 defaults write NSGlobalDomain AppleHighlightColor -string "0.968627 0.831373 1.000000"
@@ -115,6 +115,9 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool false
 # Show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
+# Keep folders on top
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
 # ------------
 # Localization
 # ------------
@@ -125,14 +128,6 @@ defaults write NSGlobalDomain AppleLocale -string "en_FR@currency=EUR"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write AppleTemperatureUnit -string "Celsius"
-
-# Set keyboard layout to US International
-defaults write com.apple.HIToolbox AppleEnabledInputSources -array \
-	'{
-		InputSourceKind = "Keyboard Layout";
-		"KeyboardLayout ID" = 15000;
-		"KeyboardLayout Name" = "USInternational-PC";
-	}'
 
 # --------
 # Touchpad
@@ -148,13 +143,6 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # --------
 # Menu Bar
 # --------
-
-# Enable relevant menu-bar icons
-# (some system menu-bar icons are provided by iStat Menus)
-defaults write com.apple.systemuiserver menuExtras -array \
-    "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-    "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-    "/System/Library/CoreServices/Menu Extras/Volume.menu"
 
 # "Hide" date/time (in favor of iStatsMenu's widget)
 defaults write com.apple.menuextra.clock IsAnalog -bool true

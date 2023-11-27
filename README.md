@@ -91,7 +91,7 @@
 - pull latest master of all submodules
 
   ```sh
-  git submodule foreach git pull origin master
+  git submodule foreach git pull origin HEAD
   ```
 
 ### iterm
@@ -122,6 +122,19 @@
 
 ### emacs
 
+#### major gotcha
+
+The "railwaycat/emacsmacport/emacs-mac" brew formula comes both in a "classic" formula flavor and a cask one. Use the cask, it's the only one creating an `Emacs.app` folder in `Applications/`.
+
+#### init doom emacs
+
 ```sh
+doom install
+```
+
+#### when nothing works
+
+```sh
+rm -rf .emacs.d/.local/
 doom install
 ```

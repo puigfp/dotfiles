@@ -36,7 +36,7 @@ brew "wget"
 
 # emacs
 tap "railwaycat/emacsmacport"
-brew "railwaycat/emacsmacport/emacs-mac"
+cask "railwaycat/emacsmacport/emacs-mac" # it's important to use the cask and not the formula, because the formula doesn't put Emacs.app in Applications/
 brew "imagemagick" # required by emacs
 
 # ledger
@@ -81,6 +81,7 @@ brew "flyctl"
 tap "homebrew/cask"
 cask "google-chrome"
 cask "iterm2"
+cask "alacritty"
 cask "spotify"
 cask "visual-studio-code"
 cask "calibre"
@@ -91,11 +92,16 @@ cask "mactex"
 cask "dash"
 cask "transmission"
 cask "musicbrainz-picard"
+cask "postman"
+cask "netnewswire"
+cask "anki"
+cask "obsidian"
+#
+# utils
 cask "istat-menus"
 cask "bartender"
-cask "postman"
+cask "rectangle"
 cask "monitorcontrol"
-cask "netnewswire"
 
 tap "homebrew/cask-versions"
 
