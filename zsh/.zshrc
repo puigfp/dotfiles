@@ -74,10 +74,13 @@ export PATH="${GOPATH}/bin:${PATH}"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Python
-export PIPENV_VENV_IN_PROJECT="enabled"
 export PIP_REQUIRE_VIRTUALENV=true
+## poetry
 export PATH="$HOME/.poetry/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+## pipx
+export PATH="$PATH:/Users/francisco/.local/bin"
 
 # Brew
 brew-upgrade-all() {
