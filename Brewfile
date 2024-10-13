@@ -47,6 +47,11 @@ brew "hledger"
 cask "handbrake"
 brew "ffmpeg"
 
+# restic
+brew "restic"
+tap "creativeprojects/tap"
+brew "resticprofile"
+
 # python
 brew "python"
 brew "openblas" # https://github.com/numpy/numpy/issues/17784#issuecomment-729950525
@@ -59,6 +64,7 @@ brew "pipx"
 # node
 brew "node"
 brew "npm"
+brew "yarn"
 
 # go
 brew "go"
@@ -77,7 +83,6 @@ brew "exiftool"
 brew "d2"
 brew "flyctl"
 
-tap "homebrew/cask"
 cask "google-chrome"
 cask "iterm2"
 cask "alacritty"
@@ -107,5 +112,4 @@ tap "homebrew/cask-versions"
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
 
-tap "homebrew/cask-drivers"
 cask "logitech-options"
