@@ -64,7 +64,6 @@ brew "pipx"
 # node
 brew "node"
 brew "npm"
-brew "yarn"
 
 # go
 brew "go"
