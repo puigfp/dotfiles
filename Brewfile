@@ -55,7 +55,6 @@ brew "resticprofile"
 # python
 brew "python"
 brew "openblas" # https://github.com/numpy/numpy/issues/17784#issuecomment-729950525
-brew "zlib" # pyenv dependency
 brew "uv"
 
 # node
