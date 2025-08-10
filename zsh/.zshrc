@@ -77,10 +77,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PIP_REQUIRE_VIRTUALENV=true
 ## poetry
 export PATH="$HOME/.poetry/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-## pipx
-export PATH="$PATH:/Users/francisco/.local/bin"
+
+# Restic
+eval "$(resticprofile generate --zsh-completion)"
 
 # Brew
 brew-upgrade-all() {
@@ -89,3 +88,5 @@ brew-upgrade-all() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
