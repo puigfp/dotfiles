@@ -22,6 +22,10 @@
             "correlations": {
                 "context": "stripe.us1.staging.dog",
                 "namespace": "delancie"
+            },
+            "ds-impact-detection": {
+                "context": "stripe.us1.staging.dog",
+                "namespace": "delancie"
             }
         },
         "eu1.prod": {
