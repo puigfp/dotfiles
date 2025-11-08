@@ -5,6 +5,7 @@
 [user]
 	email = francisco.puig@datadoghq.com
 	name = Francisco Puig
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPOCWYjNGqhSo7EXnnAAdk9QijiFWPgqtaF18lffjWFn francisco.puig+git-commit-signing@datadoghq.com
 
 [branch]
 	sort = -committerdate
@@ -17,15 +18,37 @@
 
 [include]
 	path = ~/.gitconfig-github-token
+	path = /Users/francisco.puig/.config/gitsign/gitconfig
+
+; Content of the file (for reference)
+; [user]
+;         email = francisco.puig@datadoghq.com
+;         signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM0pguWdh32UHibg/W4UQluCBajRQ6A8u8x9bkIYC4on
+; [dd-gitsign]
+;         username = puigfp-dd
+; [gpg]
+;         format = ssh
+; [gpg "ssh"]
+;         program = /opt/homebrew/bin/dd-gitsign
+;         allowedSignersFile = /Users/francisco.puig/.config/gitsign/allowed-signers
+; [commit]
+;         gpgsign = true
+; [tag]
+;         gpgsign = true%
 
 [includeIf "gitdir:~/dev/"]
 	path = ~/.gitconfig-personal
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+	insteadOf = git://github.com/
 
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh

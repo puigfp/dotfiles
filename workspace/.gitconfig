@@ -1,6 +1,7 @@
 [user]
 	email = francisco.puig@datadoghq.com
 	name = Francisco Puig
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPOCWYjNGqhSo7EXnnAAdk9QijiFWPgqtaF18lffjWFn francisco.puig+git-commit-signing@datadoghq.com
 
 [branch]
 	sort = -committerdate
@@ -13,3 +14,8 @@
 
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh

@@ -17,12 +17,12 @@ const GoogleIdp = {
 const Chrome = (openInBackground = false) => ({
   name: 'Google Chrome',
   openInBackground,
-  profile: 'Profile 1',
+  profile: 'Profile 2',
 })
 const DdChrome = (openInBackground = false) => ({
   name: 'Google Chrome',
   openInBackground,
-  profile: 'Default',
+  profile: 'Profile 1',
 })
 const DdGovChrome = (openInBackground = false) => ({
   name: 'Google Chrome',
