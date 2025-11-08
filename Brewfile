@@ -29,6 +29,8 @@ brew "lz4"
 # git
 brew "git"
 brew "tig"
+tap "withgraphite/tap"
+brew "withgraphite/tap/graphite"
 
 # curl or similar
 brew "curl"
@@ -50,10 +52,15 @@ brew "ffmpeg"
 # restic
 brew "restic"
 tap "creativeprojects/tap"
-brew "resticprofile"
+# brew "resticprofile"
 
 # python
 brew "python"
+brew "python@3.8"
+brew "python@3.9"
+brew "python@3.11"
+brew "python@3.12"
+brew "pyenv"
 brew "openblas" # https://github.com/numpy/numpy/issues/17784#issuecomment-729950525
 brew "uv"
 
@@ -116,7 +123,6 @@ cask "logitech-options"
 
 # general tooling
 tap "datadog/tap", "git@github.com:DataDog/homebrew-tap.git"
-# brew "datadog/tap/python@2"
 brew "datadog/tap/latest-image"
 brew "datadog/tap/latest-chart"
 brew "datadog/tap/s22-checker"
@@ -147,17 +153,7 @@ cask "tctx"
 cask "tilt"
 cask "tilt-functions"
 
-# scala/mortar
-tap "homebrew/cask-versions"
-cask "homebrew/cask-versions/adoptopenjdk8"
-# brew "scala211"
-# brew "sbt"
-
-# tap "datadog/data-eng-tools", "git@github.com:DataDog/data-eng-tools.git"
-# brew "data-eng-tools"
-
 brew "mysql"
-# brew "postgresql@9.6"
 brew "openssl"
 
 brew "gnupg"
@@ -166,6 +162,7 @@ brew "pre-commit"
 brew "bazelisk"
 
 brew "tfenv"
+brew "awscli"
 brew "awscli@1"
 brew "azure-cli"
 brew "vault"
@@ -184,9 +181,5 @@ brew "just"
 # web-ui
 brew "yarn"
 brew "nodenv"
-
-# dogbox
-# cask "virtualbox"
-# cask "vagrant"
 
 brew "saml2aws"
