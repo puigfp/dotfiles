@@ -40,8 +40,10 @@ set wrap
 " display at least 10 lines around cusror
 set scrolloff=10
 
-" display toolbar
-set guioptions=T
+" display toolbar (GUI only)
+if has('gui_running')
+  set guioptions=T
+endif
 
 " ingore case when searching
 set ignorecase
@@ -72,7 +74,10 @@ filetype on
 filetype plugin on
 filetype indent on
 
-set guifont=Fira\ Code:h13
+" set font (GUI only)
+if has('gui_running')
+  set guifont=Fira\ Code:h13
+endif
 
 " sync vim clipboard with system clipboard
 set clipboard+=unnamedplus
