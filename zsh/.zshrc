@@ -267,3 +267,5 @@ POWERLEVEL9K_INSTANT_PROMPT=verbose
 
 # To customize prompt, run `p11k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

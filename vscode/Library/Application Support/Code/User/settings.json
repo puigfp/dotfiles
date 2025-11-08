@@ -1,97 +1,105 @@
 {
-    "editor.fontFamily": "'FiraCode-Retina', 'Fira Code', 'Cascadia Code', 'Droid Sans Mono'",
-    "editor.fontSize": 13,
-    "editor.fontLigatures": false,
-    "editor.minimap.enabled": false,
-    "editor.insertSpaces": true,
-    "editor.rulers": [ 80, 100 ],
-    "editor.renderWhitespace": "all",
+  "editor.fontFamily": "'FiraCode-Retina', 'Fira Code', 'Cascadia Code', 'Droid Sans Mono'",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": false,
+  "editor.minimap.enabled": false,
+  "editor.insertSpaces": true,
+  "editor.rulers": [80, 100],
+  "editor.renderWhitespace": "all",
 
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
 
-    "workbench.colorTheme": "Tomorrow",
-    "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.colorTheme": "Tomorrow",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
 
-    "[python]": {
-        "editor.rulers": [ 120 ], // black max line length
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "ms-python.python"
-    },
-    "python.languageServer": "Pylance",
-    "python.formatting.provider": "black",
+  "[python]": {
+    "editor.rulers": [120], // black max line length
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "python.languageServer": "Pylance",
+  "python.formatting.provider": "black",
 
-    "[rust]": {
-        "editor.rulers": [ 80 ],
-        "editor.formatOnSave": true
-    },
-    "[javascript]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-    },
+  "[rust]": {
+    "editor.rulers": [80],
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
-    "[typescript]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-    },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
-    "[markdown]": {
-        "editor.tabSize": 2,
-        "editor.wordWrap": "on",
-        "files.trimTrailingWhitespace": false,
-        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-    },
+  "[markdown]": {
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "files.trimTrailingWhitespace": false,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
 
-    "go.useLanguageServer": true,
-    "go.formatTool": "goimports",
+  "go.useLanguageServer": true,
+  "go.formatTool": "goimports",
 
-    "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.viewer": "tab",
 
-    "remote.SSH.defaultExtensions": [
-        "eamodio.gitlens",
-        "golang.go",
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "zxh404.vscode-proto3"
-    ],
+  "remote.SSH.defaultExtensions": [
+    "eamodio.gitlens",
+    "golang.go",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "zxh404.vscode-proto3"
+  ],
 
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
 
-    "rust-analyzer.checkOnSave.command": "clippy",
-    "rust-analyzer.rustfmt.extraArgs": [
-        "+nightly"
-    ],
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.rustfmt.extraArgs": ["+nightly"],
 
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["j", "k"],
-            "after": ["<Esc>"]
-        }
-    ],
-
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/__pycache__": true,
-        "**/*.pyc": true
-    },
-    "go.toolsManagement.autoUpdate": true,
-    "excalidraw.theme": "light",
-    "redhat.telemetry.enabled": false,
-    "haskell.manageHLS": "GHCup",
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
     }
-    "cSpell.userWords": [],
-    "redhat.telemetry.enabled": false,
+  ],
+
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "excalidraw.theme": "light",
+  "haskell.manageHLS": "GHCup",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.tsserver.log": "off",
+  "typescript.tsserver.maxTsServerMemory": 12000,
+  "typescript.tsserver.watchOptions": {
+    "excludeDirectories": ["**/node_modules", "**/.yarn"],
+    "excludeFiles": [".pnp.cjs"]
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "jupyter.askForKernelRestart": false,
+
+  "vscode-kubernetes.kubectl-path.mac": "/opt/homebrew/bin/kubectl",
+  "vscode-kubernetes.helm-path.mac": "/opt/homebrew/bin/helm",
 }

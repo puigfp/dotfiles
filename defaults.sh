@@ -26,7 +26,7 @@ defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool true
 defaults write com.apple.dock mru-spaces -bool false
 
 # Disable sound effects
-defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -bool false
+defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -139,6 +139,13 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# --------
+# Keyboard
+# --------
+
+# Disable character picker on long hold
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 # --------
 # Menu Bar
