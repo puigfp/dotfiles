@@ -2,6 +2,10 @@
 
 ## cheatsheet
 
+### icloud drive folder
+
+- `~/Library/Mobile Documents/com~apple~CloudDocs/`
+
 ### sane macOS parameters
 
 ```sh
