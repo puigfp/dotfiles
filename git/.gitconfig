@@ -52,3 +52,5 @@
 	gpgsign = true
 [gpg]
 	format = ssh
+[maintenance]
+	repo = /Users/francisco.puig/go/src/github.com/DataDog/dd-source
