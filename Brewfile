@@ -12,7 +12,7 @@ brew "zsh"
 
 # search
 brew "ripgrep"
-brew "the_silver_searcher"
+brew "the_silver_searcher" # ag
 
 # random cli utils
 brew "htop"
@@ -35,9 +35,9 @@ brew "curl"
 brew "wget"
 
 # emacs
-tap "railwaycat/emacsmacport"
-cask "railwaycat/emacsmacport/emacs-mac" # it's important to use the cask and not the formula, because the formula doesn't put Emacs.app in Applications/
-brew "imagemagick" # required by emacs
+# tap "railwaycat/emacsmacport"
+# cask "railwaycat/emacsmacport/emacs-mac" # it's important to use the cask and not the formula, because the formula doesn't put Emacs.app in Applications/
+# brew "imagemagick" # required by emacs
 
 # ledger
 brew "ledger"
@@ -87,22 +87,19 @@ cask "calibre"
 cask "telegram"
 cask "whatsapp"
 cask "vlc"
-cask "mactex"
 cask "dash"
 cask "transmission"
-cask "musicbrainz-picard"
 cask "postman"
 cask "netnewswire"
 cask "anki"
 cask "obsidian"
-#
+
 # utils
 cask "istat-menus"
-cask "bartender"
+cask "jordanbaird-ice"
 cask "rectangle"
+cask "meetingbar"
 cask "monitorcontrol"
-
-tap "homebrew/cask-versions"
 
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
