@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+### START ANYSPHERE CODEBLOCK
+[ -f "/Users/francisco/anysphere/everysphere/scripts/setup/rcfiles/zshrc" ] && source "/Users/francisco/anysphere/everysphere/scripts/setup/rcfiles/zshrc"
+### END ANYSPHERE CODEBLOCK
+
 # this was added to prevent git from trying to set the locale to "en_FR" when running
 # (the language of my system is English but the region is France)
 export LANG="en_US.UTF-8"
@@ -56,11 +60,6 @@ fi
 export CLICOLOR=1
 export TERM=xterm-256color
 
-# emacs
-export PATH="$HOME/.emacs.d/bin:$PATH"
-# export EDITOR="$HOME/emacsclient"
-# export VISUAL=$EDITOR
-
 # neovim
 alias vim=nvim
 export EDITOR=nvim
@@ -69,22 +68,6 @@ export VISUAL=nvim
 # Go
 export GOPATH="${HOME?}/go"
 export PATH="${GOPATH}/bin:${PATH}"
-
-# Rust
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Python
-export PIP_REQUIRE_VIRTUALENV=true
-## poetry
-export PATH="$HOME/.poetry/bin:$PATH"
-
-# Restic
-eval "$(resticprofile generate --zsh-completion)"
-
-# Brew
-brew-upgrade-all() {
-  brew upgrade --greddy # --greedy forces all GUI apps to update
-}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
