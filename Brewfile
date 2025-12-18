@@ -105,3 +105,5 @@ tap "homebrew/cask-fonts"
 cask "font-fira-code"
 
 cask "logitech-options"
+
+brew "dotenvx/brew/dotenvx"

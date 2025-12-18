@@ -1,0 +1,39 @@
+version: "1"
+
+global:
+  scheduler: crond
+
+default:
+  backup:
+    verbose: true
+    source:
+      # zsh history
+      - "/Users/francisco/.zsh_history"
+
+      # all git repositories cloned locally
+      - "/Users/francisco/dev"
+
+      # mostly for the screenshots folder
+      - "/Users/francisco/Pictures"
+
+      # obsidian vaults
+      - "/Users/francisco/Library/Mobile Documents/iCloud~md~obsidian"
+
+    exclude:
+      # iPhotos library
+      - "/**/*.photoslibrary"
+      # node_modules (they have way too many files, they make the backup slow)
+      - "/**/node_modules/"
+
+    schedule: "*-*-* 12,20:00:00"
+    schedule-permission: user
+    schedule-ignore-on-battery: true
+
+  retention:
+    before-backup: false
+    after-backup: true
+    prune: true
+    keep-within: 60d
+    keep-weekly: 52
+    keep-monthly: 36
+    keep-yearly: unlimited
