@@ -22,6 +22,8 @@ default:
     exclude:
       # iPhotos library
       - "/**/*.photoslibrary"
+      # Photo Booth Library
+      - "/**/Photo Booth Library/"
       # node_modules (they have way too many files, they make the backup slow)
       - "/**/node_modules/"
 
