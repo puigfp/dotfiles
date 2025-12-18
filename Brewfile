@@ -39,9 +39,9 @@ brew "wget"
 # cask "railwaycat/emacsmacport/emacs-mac" # it's important to use the cask and not the formula, because the formula doesn't put Emacs.app in Applications/
 # brew "imagemagick" # required by emacs
 
-# ledger
-brew "ledger"
-brew "hledger"
+# # ledger
+# brew "ledger"
+# brew "hledger"
 
 # video encoding
 cask "handbrake"
@@ -49,13 +49,12 @@ brew "ffmpeg"
 
 # restic
 brew "restic"
-tap "creativeprojects/tap"
-brew "resticprofile"
+brew "creativeprojects/tap/resticprofile"
 
 # python
 brew "python"
-brew "openblas" # https://github.com/numpy/numpy/issues/17784#issuecomment-729950525
 brew "uv"
+brew "openblas" # https://github.com/numpy/numpy/issues/17784#issuecomment-729950525
 
 # node
 brew "node"
@@ -101,9 +100,8 @@ cask "rectangle"
 cask "meetingbar"
 cask "monitorcontrol"
 
-tap "homebrew/cask-fonts"
-cask "font-fira-code"
-
-cask "logitech-options"
+brew "homebrew/cask-fonts/font-fira-code"
 
 brew "dotenvx/brew/dotenvx"
+brew "texlive"
+brew "mise"
