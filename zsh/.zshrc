@@ -90,3 +90,11 @@ brew-upgrade-all() {
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias cd-icloud='cd ~/Library/Mobile\ Documents/'
+alias cd-icloud-drive='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
+alias cd-icloud-obsidian='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/'
