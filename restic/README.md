@@ -1,6 +1,7 @@
 # Sample commands
 
 - installing dotenvx: `brew install dotenvx/brew/dotenvx`
+  - the private key needs to be in a `.env.keys` file
   - adding secret: `dotenvx set SECRET "value"`
   - adding regular env variable: `dotenvx set --plain CONFIG "value"`
 - running resticprofile commands: `dotenvx run -- resticprofile snapshots`
