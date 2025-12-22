@@ -22,10 +22,48 @@ default:
     exclude:
       # iPhotos library
       - "/**/*.photoslibrary"
+
       # Photo Booth Library
       - "/**/Photo Booth Library/"
+
       # node_modules (they have way too many files, they make the backup slow)
       - "/**/node_modules/"
+
+      # Python virtual environments (regenerable via pip)
+      - "/**/.venv/"
+      - "/**/venv/"
+      - "/**/__pycache__/"
+      - "/**/*.pyc"
+
+      # Rust build output (regenerable via cargo build)
+      - "/**/target/debug/"
+      - "/**/target/release/"
+
+      # Rust cross-compilation targets (target triples like wasm32-unknown-unknown)
+      - "/**/target/*-*-*/"
+
+      # iOS/macOS CocoaPods (regenerable via pod install)
+      - "/Users/francisco/dev/**/Pods/"
+
+      # Xcode derived data (standard location, regenerable)
+      - "/Users/francisco/Library/Developer/Xcode/DerivedData/"
+
+      # Go modules cache
+      - "/**/go/pkg/mod/"
+
+      # macOS system files (always regenerated)
+      - "/**/.Spotlight-V100/"
+      - "/**/.Trashes/"
+      - "/**/.fseventsd/"
+      - "/**/.DS_Store"
+
+      # Caches (explicitly designed to be disposable)
+      - "/**/Library/Caches/"
+      - "/**/.cache/"
+
+      # Vim swap files
+      - "/**/*.swp"
+      - "/**/*.swo"
 
     schedule: "*-*-* 12,20:00:00"
     schedule-permission: user
