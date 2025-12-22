@@ -97,7 +97,7 @@ cask "meetingbar"
 cask "monitorcontrol"
 
 # fonts
-brew "homebrew/cask-fonts/font-fira-code"
+cask "homebrew/cask-fonts/font-fira-code"
 
 # latex
 brew "texlive"
