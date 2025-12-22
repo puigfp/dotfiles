@@ -1,3 +1,5 @@
+brew "stow"
+
 # coreutils
 brew "coreutils"
 brew "gnu-sed"
@@ -29,10 +31,20 @@ brew "lz4"
 # git
 brew "git"
 brew "tig"
+brew "gh"
+brew "withgraphite/tap/graphite"
 
 # curl or similar
 brew "curl"
 brew "wget"
+
+# video encoding
+brew "handbrake"
+brew "ffmpeg"
+
+# restic
+brew "restic"
+brew "creativeprojects/tap/resticprofile"
 
 # emacs
 # tap "railwaycat/emacsmacport"
@@ -43,65 +55,49 @@ brew "wget"
 # brew "ledger"
 # brew "hledger"
 
-# video encoding
-cask "handbrake"
-brew "ffmpeg"
+# devtools
+brew "dotenvx/brew/dotenvx"
 
-# restic
-brew "restic"
-brew "creativeprojects/tap/resticprofile"
-
-# python
-brew "python"
+# compilers
+brew "mise"
 brew "uv"
-brew "openblas" # https://github.com/numpy/numpy/issues/17784#issuecomment-729950525
+brew "rustup"
 
-# node
-brew "node"
-brew "npm"
-
-# go
-brew "go"
-brew "gimme"
-
-brew "stow"
 brew "tmux"
 brew "fzf"
 brew "neovim"
-brew "rustup"
-brew "cmatrix"
 brew "pandoc"
-brew "tldr"
 brew "youtube-dl"
 brew "exiftool"
 brew "d2"
 brew "flyctl"
 
-cask "google-chrome"
-cask "iterm2"
-cask "alacritty"
-cask "spotify"
-cask "visual-studio-code"
-cask "calibre"
-cask "telegram"
-cask "whatsapp"
-cask "vlc"
-cask "dash"
-cask "transmission"
-cask "postman"
-cask "netnewswire"
-cask "anki"
-cask "obsidian"
+# desktop apps
+brew "google-chrome"
+brew "iterm2"
+brew "alacritty"
+brew "spotify"
+brew "visual-studio-code"
+brew "calibre"
+brew "telegram"
+brew "whatsapp"
+brew "vlc"
+brew "dash"
+brew "transmission"
+brew "postman"
+brew "netnewswire"
+brew "anki"
+brew "obsidian"
 
-# utils
-cask "istat-menus"
-cask "jordanbaird-ice"
-cask "rectangle"
-cask "meetingbar"
-cask "monitorcontrol"
+# menu bar apps
+brew "istat-menus"
+brew "jordanbaird-ice"
+brew "rectangle"
+brew "meetingbar"
+brew "monitorcontrol"
 
+# fonts
 brew "homebrew/cask-fonts/font-fira-code"
 
-brew "dotenvx/brew/dotenvx"
+# latex
 brew "texlive"
-brew "mise"
