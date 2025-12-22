@@ -29,6 +29,12 @@ default:
       # node_modules (they have way too many files, they make the backup slow)
       - "/**/node_modules/"
 
+      # Yarn cache
+      - "/**/.yarn/"
+
+      # Vercel deployment cache
+      - "/**/.vercel/"
+
       # Python virtual environments (regenerable via pip)
       - "/**/.venv/"
       - "/**/venv/"
