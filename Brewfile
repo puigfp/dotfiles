@@ -39,7 +39,7 @@ brew "curl"
 brew "wget"
 
 # video encoding
-brew "handbrake"
+# brew "handbrake"
 brew "ffmpeg"
 
 # restic
@@ -67,7 +67,7 @@ brew "tmux"
 brew "fzf"
 brew "neovim"
 brew "pandoc"
-brew "youtube-dl"
+brew "yt-dlp" # youtube-dl
 brew "exiftool"
 brew "d2"
 brew "flyctl"
@@ -78,6 +78,7 @@ cask "iterm2"
 cask "alacritty"
 cask "spotify"
 cask "visual-studio-code"
+cask "cursor"
 cask "calibre"
 cask "telegram"
 cask "whatsapp"
@@ -97,7 +98,7 @@ cask "meetingbar"
 cask "monitorcontrol"
 
 # fonts
-cask "homebrew/cask-fonts/font-fira-code"
+cask "font-fira-code"
 
 # latex
 brew "texlive"
