@@ -91,7 +91,7 @@ puigfp: # Macbook Pro 14 M3 Pro
   backup:
     host: puigfp
   retention:
-    host: puigfp
+    host: puigfp # only consider snapshots from this host for pruning
 
 puigfp-2025-12-23: # Macbook Pro 14 M1 Max (bought back when I left Datadog)
   inherit: base
