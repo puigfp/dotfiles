@@ -3,9 +3,10 @@ version: "1"
 global:
   scheduler: crond
 
-default:
+base:
   backup:
     verbose: true
+    check-after: true
     source:
       # zsh history
       - "/Users/francisco/.zsh_history"
@@ -83,3 +84,10 @@ default:
     keep-weekly: 52
     keep-monthly: 36
     keep-yearly: unlimited
+
+puigfp-2025-12-23:
+  inherit: base
+  backup:
+    host: puigfp-2025-12-23
+  retention:
+    host: puigfp-2025-12-23 # only consider snapshots from this host for pruning
