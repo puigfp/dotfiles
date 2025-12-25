@@ -86,7 +86,7 @@ base:
     keep-monthly: 36
     keep-yearly: unlimited
 
-puigfp-2025-12-23:
+puigfp-2025-12-23: # Macbook Pro 14 M1 Max (bought back when I left Datadog)
   inherit: base
   backup:
     host: puigfp-2025-12-23
