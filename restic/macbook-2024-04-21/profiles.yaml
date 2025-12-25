@@ -2,6 +2,7 @@ version: "1"
 
 global:
   scheduler: crond
+  log: "resticprofile.log"
 
 base:
   backup:
