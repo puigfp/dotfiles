@@ -7,7 +7,7 @@ global:
 base:
   backup:
     verbose: true
-    check-after: true
+    # check-after: true
     source:
       # zsh history
       - "/Users/francisco/.zsh_history"
