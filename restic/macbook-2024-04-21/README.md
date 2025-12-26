@@ -18,6 +18,6 @@ Note that I only have one personal laptop at a time, but this is to ensure I'm n
   - validate that it worked: `crontab -l`
   - edit the line to prefix the call with `dotenvx -- run`:
     ```
-    2 */6 * * * cd /Users/francisco/dev/dotfiles/restic/macbook-2024-04-21 && dotenvx run -- /opt/homebrew/bin/resticprofile --no-ansi --config profiles.yaml run-schedule backup@profile-name
+    2 */2 * * * cd /Users/francisco/dev/dotfiles/restic/macbook-2024-04-21 && dotenvx run -- /opt/homebrew/bin/resticprofile --no-ansi --config profiles.yaml run-schedule backup@profile-name
     ```
 - restoring a folder to a specific place: `dotenvx run -- resticprofile restore snapshot-hash:/Users/francisco/dev --target ~/tmp/dev-restored`
