@@ -82,6 +82,7 @@ base:
     schedule: "*-*-* 12,20:00:00"
     schedule-permission: user
     # schedule-ignore-on-battery: true
+    ignore-on-battery-less-than: 50
 
   retention:
     before-backup: false
