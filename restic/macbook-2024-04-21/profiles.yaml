@@ -18,6 +18,9 @@ base:
       # mostly for the screenshots folder
       - "/Users/francisco/Pictures"
 
+      # iCloud Drive
+      - "/Users/francisco/Library/Mobile Documents/com~apple~CloudDocs"
+
       # obsidian vaults
       - "/Users/francisco/Library/Mobile Documents/iCloud~md~obsidian"
 
