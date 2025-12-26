@@ -74,6 +74,7 @@ brew "flyctl"
 
 # desktop apps
 cask "google-chrome"
+cask "google-drive"
 cask "iterm2"
 cask "alacritty"
 cask "spotify"
