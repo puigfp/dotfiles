@@ -88,7 +88,7 @@ base:
     before-backup: false
     after-backup: true
     prune: true
-    keep-within: 60d
+    keep-within: 7d
     keep-weekly: 52
     keep-monthly: 36
     keep-yearly: unlimited
