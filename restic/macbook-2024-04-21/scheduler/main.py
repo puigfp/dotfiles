@@ -1,11 +1,11 @@
 from datetime import datetime, timedelta
 import json
 from pathlib import Path
-import pty
-import subprocess
 import os
 import logging
 import sys
+
+import sh
 
 WORKING_DIR = "/Users/francisco/dev/dotfiles/restic/macbook-2024-04-21"
 RESTIC_PROFILE = "puigfp-2025-12-23"
@@ -30,24 +30,12 @@ log.addHandler(file_handler)
 
 
 def is_running_on_battery() -> bool:
-    result = subprocess.run(
-        ["pmset", "-g", "batt"],
-        capture_output=True,
-        text=True,
-        check=True, # crash if exit code is non-zero
-    )
-    return "AC Power" not in result.stdout
+    result = sh.pmset("-g", "batt")
+    return "AC Power" not in result
 
 def is_low_data_mode() -> bool:
-    # Call an AI-generated Swift script because the API is only available for Swift.
-    script_path = Path(__file__).parent / "check_low_data_mode.swift"
-    result = subprocess.run(
-        ["swift", str(script_path)],
-        capture_output=True,
-        text=True,
-        check=True, # crash if exit code is non-zero
-    )
-    return "true" in result.stdout
+    result = sh.swift(Path(__file__).parent / "check_low_data_mode.swift")
+    return "true" in result
 
 def get_last_backup_timestamp() -> int | None:
     import json
@@ -70,30 +58,20 @@ def write_last_backup_timestamp(timestamp: int) -> None:
         json.dump({"last_backup_timestamp": timestamp}, f)
 
 def run_restic_command(command: str):
-    # AI-generated code to capture output and forwarding it to the logger
-    master_fd, slave_fd = pty.openpty()
-    process = subprocess.Popen(
-        ["dotenvx", "run", "--", "resticprofile", command],
-        stdout=slave_fd,
-        stderr=slave_fd,
-        close_fds=True,
-    )
-    os.close(slave_fd)
-    with os.fdopen(master_fd, "r") as master:
-        for line in master:
-            log.info(line.rstrip())
-    process.wait()
-    if process.returncode != 0:
-        raise subprocess.CalledProcessError(process.returncode, command)
+    def log_line(line):
+        log.info(line.rstrip())
+    sh.dotenvx("run", "--", "resticprofile", command, _out=log_line, _err=log_line, _tty_out=True)
 
 def notify(title: str, text: str, sound: str | None = "default") -> None:
     if sound:
-        cmd = 'display notification "{}" with title "{}" sound name "{}"'.format(text, title, sound)
+        cmd = f'display notification "{text}" with title "{title}" sound name "{sound}"'
     else:
-        cmd = 'display notification "{}" with title "{}"'.format(text, title)
-    subprocess.call(['osascript', '-e', cmd])
+        cmd = f'display notification "{text}" with title "{title}"'
+    sh.osascript("-e", cmd)
 
 def main():
+    now = int(datetime.now().timestamp())
+
     log.info("Starting backup")
     log.info(f"Changing working directory to \"{WORKING_DIR}\"")
     os.chdir(WORKING_DIR)
@@ -109,7 +87,6 @@ def main():
         return
     
     # do not run if last backup is recent-enough
-    now = int(datetime.now().timestamp())
     last_backup_timestamp = get_last_backup_timestamp()
     if last_backup_timestamp is not None and now - last_backup_timestamp < BACKUP_FREQ:
         log.info(f"Last backup was less than '{timedelta(seconds=BACKUP_FREQ)}' ago, skipping backup")

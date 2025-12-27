@@ -27,3 +27,7 @@ Make sure to run this command manually before updating the crontab:
 ### If nothing runs
 
 Check failure logs in `/var/mail/francisco`.
+
+## Random notes
+
+Blog post about `sh`: https://martinheinz.dev/blog/98
