@@ -89,7 +89,7 @@ def main():
     # do not run if last backup is recent-enough
     last_backup_timestamp = get_last_backup_timestamp()
     if last_backup_timestamp is not None and now - last_backup_timestamp < BACKUP_FREQ:
-        log.info(f"Last backup was less than '{timedelta(seconds=BACKUP_FREQ)}' ago, skipping backup")
+        log.info(f"Last backup was done on '{datetime.fromtimestamp(last_backup_timestamp).strftime('%Y-%m-%d %H:%M:%S')}', less than '{timedelta(seconds=BACKUP_FREQ)}' ago, skipping backup")
         return
 
     # run backup
