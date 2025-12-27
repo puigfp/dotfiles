@@ -98,3 +98,5 @@ export NVM_DIR="$HOME/.nvm"
 alias cd-icloud='cd ~/Library/Mobile\ Documents/'
 alias cd-icloud-drive='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 alias cd-icloud-obsidian='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/'
+
+eval "$(mise activate bash)"
