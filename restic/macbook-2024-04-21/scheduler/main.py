@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 import json
 from pathlib import Path
+import pty
 import subprocess
 import os
 import logging
@@ -9,19 +10,20 @@ import sys
 WORKING_DIR = "/Users/francisco/dev/dotfiles/restic/macbook-2024-04-21"
 RESTIC_PROFILE = "puigfp-2025-12-23"
 BACKUP_TIME_JSON_FILE = "/Users/francisco/dev/dotfiles/restic/macbook-2024-04-21/scheduler/data/last_backup_timestamp.json"
-BACKUP_FREQ = 60 * 60 * 24 # 24 hours
 LOG_FILE = "/Users/francisco/dev/dotfiles/restic/macbook-2024-04-21/scheduler/data/scheduler.log"
+BACKUP_FREQ = 60 * 60 * 24 # 24 hours
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 
-# send log to stdout
-handler = logging.StreamHandler(sys.stdout)
 formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
-handler.setFormatter(formatter)
-log.addHandler(handler)
 
-# send log to file
+# log to stdout
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setFormatter(formatter)
+log.addHandler(stdout_handler)
+
+# log to file
 file_handler = logging.FileHandler(LOG_FILE)
 file_handler.setFormatter(formatter)
 log.addHandler(file_handler)
@@ -68,45 +70,60 @@ def write_last_backup_timestamp(timestamp: int) -> None:
         json.dump({"last_backup_timestamp": timestamp}, f)
 
 def run_restic_command(command: str):
-    subprocess.run(
+    # AI-generated code to capture output and forwarding it to the logger
+    master_fd, slave_fd = pty.openpty()
+    process = subprocess.Popen(
         ["dotenvx", "run", "--", "resticprofile", command],
-        capture_output=False,
-        text=True,
-        check=True, # crash if exit code is non-zero
+        stdout=slave_fd,
+        stderr=slave_fd,
+        close_fds=True,
     )
+    os.close(slave_fd)
+    with os.fdopen(master_fd, "r") as master:
+        for line in master:
+            log.info(line.rstrip())
+    process.wait()
+    if process.returncode != 0:
+        raise subprocess.CalledProcessError(process.returncode, command)
 
-
-CMD = '''
-on run argv
-  display notification (item 2 of argv) with title (item 1 of argv) sound name (item 3 of argv)
-end run
-'''
-
-def notify(title: str, text: str, sound: str = "default") -> None:
-  subprocess.call(['osascript', '-e', CMD, title, text, sound])
+def notify(title: str, text: str, sound: str | None = "default") -> None:
+    if sound:
+        cmd = 'display notification "{}" with title "{}" sound name "{}"'.format(text, title, sound)
+    else:
+        cmd = 'display notification "{}" with title "{}"'.format(text, title)
+    subprocess.call(['osascript', '-e', cmd])
 
 def main():
     log.info("Starting backup")
     log.info(f"Changing working directory to \"{WORKING_DIR}\"")
     os.chdir(WORKING_DIR)
+
+    # do not run on battery
     if is_running_on_battery():
         log.info("Running on battery, skipping backup")
-        exit(0)
+        return
+
+    # do not run on iPhone hotspot
     if is_low_data_mode():
         log.info("Current connection is using low data mode, skipping backup")
-        exit(0)
-    now = datetime.now().timestamp()
+        return
+    
+    # do not run if last backup is recent-enough
+    now = int(datetime.now().timestamp())
     last_backup_timestamp = get_last_backup_timestamp()
-    time_since_last_backup = now - last_backup_timestamp
-    if last_backup_timestamp is not None and time_since_last_backup < BACKUP_FREQ:
+    if last_backup_timestamp is not None and now - last_backup_timestamp < BACKUP_FREQ:
         log.info(f"Last backup was less than '{timedelta(seconds=BACKUP_FREQ)}' ago, skipping backup")
-        exit(0)
+        return
+
+    # run backup
     run_restic_command(f"backup@{RESTIC_PROFILE}")
+    write_last_backup_timestamp(now)
+    notify("Backup succeeded", "Automated Restic backup succeeded", sound=None)
 
 if __name__ == "__main__":
     try:
         main()
-        notify("Backup succeeded", "Automated Restic backup succeeded")
     except Exception as e:
+        log.exception("Restic backup failed")
         notify("Restic backup failed", f"Automated Restic backup failed: {str(e)}", sound="Basso")
         raise
