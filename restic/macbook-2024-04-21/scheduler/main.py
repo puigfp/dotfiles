@@ -76,13 +76,22 @@ def main():
     log.info(f"Changing working directory to \"{WORKING_DIR}\"")
     os.chdir(WORKING_DIR)
 
+    # Make sure both checks always run so that we can catch any bugs
+    is_running_on_battery_ = is_running_on_battery()
+    is_low_data_mode_ = is_low_data_mode()
+
+    log.info(f"| {'Check':<20} | {'Value':<10} |")
+    log.info(f"| {'-'*20} | {'-'*10} |")
+    log.info(f"| {'Running on battery':<20} | {str(is_running_on_battery_):<10}")
+    log.info(f"| {'Low data mode':<20} | {str(is_low_data_mode_):<10} |")
+
     # do not run on battery
-    if is_running_on_battery():
+    if is_running_on_battery_:
         log.info("Running on battery, skipping backup")
         return
 
     # do not run on iPhone hotspot
-    if is_low_data_mode():
+    if is_low_data_mode_:
         log.info("Current connection is using low data mode, skipping backup")
         return
     
