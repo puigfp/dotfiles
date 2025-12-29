@@ -1,1 +1,4 @@
 .DS_Store
+
+# Terraform plans rendered locally
+plan.txt
