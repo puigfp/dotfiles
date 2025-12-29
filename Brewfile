@@ -72,10 +72,13 @@ brew "exiftool"
 brew "d2"
 brew "flyctl"
 
+cask "orbstack"
+
 # desktop apps
 cask "google-chrome"
 cask "google-drive"
 cask "iterm2"
+cask "ghostty"
 cask "alacritty"
 cask "spotify"
 cask "visual-studio-code"
