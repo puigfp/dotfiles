@@ -73,3 +73,7 @@ export PATH="${GOPATH}/bin:${PATH}"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+### AnySphere Setup ###
+source "/Users/francisco/anysphere/everysphere/scripts/setup/rcfiles/zshrc"
+### End AnySphere Setup ###
