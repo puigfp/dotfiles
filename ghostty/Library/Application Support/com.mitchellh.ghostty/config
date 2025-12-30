@@ -52,6 +52,7 @@ theme = Tomorrow
 font-family = Fira Code
 font-thicken = true
 font-thicken-strength = 0
+font-feature = -calt, -liga, -dlig
 
 # Save state on exit
 window-save-state = always

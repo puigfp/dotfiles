@@ -11,7 +11,7 @@ WORKING_DIR = "/Users/francisco/dev/dotfiles/restic/macbook-2024-04-21"
 RESTIC_PROFILE = "puigfp-2025-12-23"
 BACKUP_TIME_JSON_FILE = "/Users/francisco/dev/dotfiles/restic/macbook-2024-04-21/scheduler/data/last_backup_timestamp.json"
 LOG_FILE = "/Users/francisco/dev/dotfiles/restic/macbook-2024-04-21/scheduler/data/scheduler.log"
-BACKUP_FREQ = 60 * 60 * 24 # 24 hours
+BACKUP_FREQ = 60 * 60 * 20 # 20 hours
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
