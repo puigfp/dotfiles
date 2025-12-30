@@ -41,7 +41,7 @@ set wrap
 set scrolloff=10
 
 " display toolbar
-set guioptions=T
+" set guioptions=T
 
 " ingore case when searching
 set ignorecase

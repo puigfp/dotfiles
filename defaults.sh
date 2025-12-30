@@ -110,7 +110,7 @@ defaults write com.apple.finder CreateDesktop -bool false
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Show filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool false
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Show path bar
 defaults write com.apple.finder ShowPathbar -bool true

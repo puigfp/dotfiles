@@ -1,0 +1,3 @@
+/.venv/
+/data/last_backup_timestamp.json
+/data/scheduler.log

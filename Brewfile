@@ -1,3 +1,5 @@
+brew "stow"
+
 # coreutils
 brew "coreutils"
 brew "gnu-sed"
@@ -12,7 +14,7 @@ brew "zsh"
 
 # search
 brew "ripgrep"
-brew "the_silver_searcher"
+brew "the_silver_searcher" # ag
 
 # random cli utils
 brew "htop"
@@ -29,82 +31,78 @@ brew "lz4"
 # git
 brew "git"
 brew "tig"
+brew "gh"
+brew "withgraphite/tap/graphite"
 
 # curl or similar
 brew "curl"
 brew "wget"
 
-# emacs
-tap "railwaycat/emacsmacport"
-cask "railwaycat/emacsmacport/emacs-mac" # it's important to use the cask and not the formula, because the formula doesn't put Emacs.app in Applications/
-brew "imagemagick" # required by emacs
-
-# ledger
-brew "ledger"
-brew "hledger"
-
 # video encoding
-cask "handbrake"
+# brew "handbrake"
 brew "ffmpeg"
 
 # restic
 brew "restic"
-tap "creativeprojects/tap"
-brew "resticprofile"
+brew "creativeprojects/tap/resticprofile"
 
-# python
-brew "python"
-brew "openblas" # https://github.com/numpy/numpy/issues/17784#issuecomment-729950525
+# emacs
+# tap "railwaycat/emacsmacport"
+# cask "railwaycat/emacsmacport/emacs-mac" # it's important to use the cask and not the formula, because the formula doesn't put Emacs.app in Applications/
+# brew "imagemagick" # required by emacs
+
+# # ledger
+# brew "ledger"
+# brew "hledger"
+
+# devtools
+brew "dotenvx/brew/dotenvx"
+
+# compilers
+brew "mise"
 brew "uv"
+brew "rustup"
 
-# node
-brew "node"
-brew "npm"
-
-# go
-brew "go"
-brew "gimme"
-
-brew "stow"
 brew "tmux"
 brew "fzf"
 brew "neovim"
-brew "rustup"
-brew "cmatrix"
 brew "pandoc"
-brew "tldr"
-brew "youtube-dl"
+brew "yt-dlp" # youtube-dl
 brew "exiftool"
 brew "d2"
 brew "flyctl"
 
+cask "orbstack"
+
+# desktop apps
 cask "google-chrome"
+cask "google-drive"
 cask "iterm2"
+cask "ghostty"
 cask "alacritty"
 cask "spotify"
 cask "visual-studio-code"
+cask "cursor"
 cask "calibre"
 cask "telegram"
 cask "whatsapp"
 cask "vlc"
-cask "mactex"
 cask "dash"
 cask "transmission"
-cask "musicbrainz-picard"
 cask "postman"
 cask "netnewswire"
 cask "anki"
 cask "obsidian"
-#
-# utils
+
+# menu bar apps
 cask "istat-menus"
-cask "bartender"
+cask "jordanbaird-ice"
 cask "rectangle"
+cask "meetingbar"
 cask "monitorcontrol"
 
-tap "homebrew/cask-versions"
-
-tap "homebrew/cask-fonts"
+# fonts
 cask "font-fira-code"
 
-cask "logitech-options"
+# latex
+brew "texlive"
