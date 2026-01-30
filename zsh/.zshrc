@@ -77,3 +77,18 @@ export PATH="${GOPATH}/bin:${PATH}"
 ### AnySphere Setup ###
 source "/Users/francisco/anysphere/everysphere/scripts/setup/rcfiles/zshrc"
 ### End AnySphere Setup ###
+
+# AnyRun helpers
+
+# debug-node <cluster> <ip>
+# example: debug-node "us3" "10.0.0.1"
+debug-node() { 
+  ssh -tt ubuntu@"$1"-tailscale-debugging-entry-machine "./ssh-runner.sh $2";
+}
+
+# Temporal helper
+temporal-prod-env() {
+  export TEMPORAL_ADDRESS=us-east-1.aws.api.temporal.io:7233
+  export TEMPORAL_API_KEY=$(security find-generic-password -a <username> -s cloud.temporal.io -w | tr -d '\n\r ')
+  export TEMPORAL_NAMESPACE=prod.voilj
+}
